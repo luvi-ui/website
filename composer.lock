@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3c5f68401a4f7dec3299feae849618b",
+    "content-hash": "a625a2a3bd0d11848b4341b0d7b5de5d",
     "packages": [
         {
             "name": "blade-ui-kit/blade-icons",
@@ -7002,11 +7002,17 @@
         },
         {
             "name": "luvi-ui/laravel-luvi",
-            "version": "dev-main",
+            "version": "v0.1.0-alpha",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luvi-ui/laravel-luvi.git",
+                "reference": "e3844c9dee68824ec007c70a50d2924dd6785b20"
+            },
             "dist": {
-                "type": "path",
-                "url": "../packages/laravel-luvi",
-                "reference": "e634c29c124176a1fb64645eff9ae969df470f2b"
+                "type": "zip",
+                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/e3844c9dee68824ec007c70a50d2924dd6785b20",
+                "reference": "e3844c9dee68824ec007c70a50d2924dd6785b20",
+                "shasum": ""
             },
             "require": {
                 "feature-ninja/cva": "^0.2.0",
@@ -7044,44 +7050,7 @@
                     "LuviUI\\LaravelLuvi\\Database\\Factories\\": "database/factories/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "LuviUI\\LaravelLuvi\\Tests\\": "tests/",
-                    "Workbench\\App\\": "workbench/app/"
-                }
-            },
-            "scripts": {
-                "post-autoload-dump": [
-                    "@composer run prepare"
-                ],
-                "clear": [
-                    "@php vendor/bin/testbench package:purge-laravel-luvi --ansi"
-                ],
-                "prepare": [
-                    "@php vendor/bin/testbench package:discover --ansi"
-                ],
-                "build": [
-                    "@composer run prepare",
-                    "@php vendor/bin/testbench workbench:build --ansi"
-                ],
-                "start": [
-                    "Composer\\Config::disableProcessTimeout",
-                    "@composer run build",
-                    "@php vendor/bin/testbench serve"
-                ],
-                "analyse": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
-                "test-coverage": [
-                    "vendor/bin/pest --coverage"
-                ],
-                "format": [
-                    "vendor/bin/pint"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -7092,9 +7061,17 @@
                 "laravel-luvi",
                 "luvi-ui"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/luvi-ui/laravel-luvi/issues",
+                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.1.0-alpha"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/suenerds",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-20T08:43:13+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -9958,10 +9935,8 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {
-        "luvi-ui/laravel-luvi": 20
-    },
+    "minimum-stability": "dev",
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
