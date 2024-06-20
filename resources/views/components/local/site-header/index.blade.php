@@ -3,7 +3,7 @@
   >
       <div class="container flex items-center h-14 max-w-screen-2xl">
           <x-local.main-nav />
-          {{-- <MobileNav /> --}}
+          <x-local.mobile-nav class="flex lg:hidden" />
           <div class="flex items-center justify-between flex-1 space-x-2 md:justify-end">
               <nav class="flex items-center">
                   <a

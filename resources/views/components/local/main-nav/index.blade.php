@@ -1,4 +1,4 @@
-<div class="hidden mr-4 md:flex"><a
+<div class="hidden mr-4 lg:flex"><a
         class="flex items-center mr-6 space-x-2"
         wire:navigate
         href="/"
