@@ -24,6 +24,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Mail::class);
 
+Route::get('/imprint', function () {
+    return view('imprint');
+});
+
 Route::get('/examples/cards', DemoCards::class);
 Route::get('/examples/forms', ProfileForm::class);
 Route::get('/examples/forms/account', AccountForm::class);

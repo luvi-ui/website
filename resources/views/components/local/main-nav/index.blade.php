@@ -48,7 +48,6 @@
         >Examples</a>
         <a
             class="transition-colors hover:text-foreground/80 text-foreground/60"
-            wire:navigate
             target="_blank"
             href="https://github.com/luvi-ui/laravel-luvi"
         >GitHub</a>
