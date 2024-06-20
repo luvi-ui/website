@@ -8,7 +8,7 @@
         content="width=device-width, initial-scale=1"
     >
 
-    <title>Shadcn Base</title>
+    <title>Luvi UI</title>
 
     <!-- Fonts -->
     <link
