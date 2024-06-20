@@ -1,0 +1,73 @@
+/* torchlight  */
+
+/*
+
+ Margin and rounding are personal preferences,
+
+ overflow-x-auto is recommended.
+
+*/
+
+pre {
+    @apply rounded-lg overflow-x-auto;
+}
+
+/*
+
+ Add some vertical padding and expand the width
+
+ to fill its container. The horizontal padding
+
+ comes at the line level so that background
+
+ colors extend edge to edge.
+
+*/
+
+pre code.torchlight {
+    @apply block py-4 min-w-max text-sm leading-7;
+}
+
+/*
+
+ Horizontal line padding.
+
+*/
+
+pre code.torchlight .line {
+    @apply px-4;
+}
+
+/*
+
+ Push the code away from the line numbers and
+
+ summary caret indicators.
+
+*/
+
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+    @apply mr-4;
+}
+
+.docs h1:not(.preview h1) {
+    @apply text-4xl font-bold tracking-tight;
+}
+
+.docs h2:not(.preview h2) {
+    @apply mt-12 mb-6 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0;
+}
+
+.docs h3:not(.preview h3) {
+    @apply mt-8 text-xl font-semibold tracking-tight;
+}
+
+.docs .dirty-reset h2 {
+    margin-top: 3rem !important;
+    margin-bottom: 0 !important;
+}
+
+.docs .dirty-reset h3 {
+    margin-top: 0 !important;
+}
