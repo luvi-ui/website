@@ -57,12 +57,12 @@
 
         <h2>Livewire</h2>
         <x-typography.p>
-            You can install Livewire as described in the Livewire installation guide <a
-                href="https://livewire.laravel.com"
+            You can install Livewire as described in the installation guide <a
+                href="https://livewire.laravel.com/docs/installation"
                 class="font-medium underline underline-offset-4"
-            >here</a>.
+            >here</a>. Ensure that Livewire injects its Javascript on your page as described in the docs.
 
-            You need to install the following plugins:
+            You also need to install the following plugins:
             <pre class="mt-6"><x-torchlight-code language='shell'>
                     npm install @alpinejs/anchor @alpinejs/collapse
                 </x-torchlight-code></pre>
@@ -71,7 +71,6 @@
         <x-typography.p>
             Some components require JavaScript to work. You can add the necessary JavaScript to your
             <x-typography.inline-code>app.js</x-typography.inline-code> file:
-
 
             <pre class="mt-6"><x-torchlight-code language='javascript'>
                     import collapse from "@alpinejs/collapse";
