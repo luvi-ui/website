@@ -1,6 +1,5 @@
 <?php
 
-use App\Livewire\Boom;
 use App\Livewire\DemoCards;
 use App\Livewire\DemoForms\AccountForm;
 use App\Livewire\DemoForms\AppearanceForm;
@@ -24,8 +23,6 @@ use Illuminate\Support\Facades\Route;
 //     return view(// });
 
 Route::get('/', Mail::class);
-
-Route::get('/boom', Boom::class);
 
 Route::get('/examples/cards', DemoCards::class);
 Route::get('/examples/forms', ProfileForm::class);
