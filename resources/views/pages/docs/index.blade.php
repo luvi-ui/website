@@ -39,12 +39,6 @@
         </x-typography.p>
 
         <x-typography.p>
-            It means you do not install it as a dependency. It is not available or distributed via npm, with no
-            plans to
-            publish it.
-        </x-typography.p>
-
-        <x-typography.p>
             Pick the components you need. Use the CLI to automatically add the components, or copy and paste the code
             into your project and customize to your needs. The code is yours.
         </x-typography.p>
