@@ -1,7 +1,7 @@
 @php
     function getBadgeVariantFromLabel($label)
     {
-        if ($label === 'two') {
+        if ($label === 'project') {
             return 'default';
         }
 
@@ -69,7 +69,7 @@
                                 @endif
                             </div>
                             <div class="ml-auto text-xs text-muted-foreground">
-                                {{ $mail->date }}
+                                {{ $mail->date->diffForHumans() }}
                             </div>
                         </div>
                         <div class="text-xs font-medium">

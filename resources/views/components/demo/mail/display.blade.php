@@ -115,13 +115,13 @@
             </div>
             @if ($mail->date)
                 <div class="ml-auto text-xs text-muted-foreground">
-                    {{ $mail->date }}
+                    {{ $mail->date->diffForHumans() }}
                 </div>
             @endif
         </div>
         <x-separator />
         <div class="flex-1 whitespace-pre-wrap p-4 text-sm">
-            {{ $mail->text }}
+            <p>{{ $mail->text }}</p>
         </div>
         <x-separator class="mt-auto" />
         <div class="p-4">

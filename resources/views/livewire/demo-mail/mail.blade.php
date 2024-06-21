@@ -47,9 +47,9 @@
                     x-on:change="Livewire.navigate(`/examples/mail/${$event.target.value}/`)"
                     wire:model="current"
                 >
-                    <option value="1">inbox 1</option>
-                    <option value="2">inbox 2</option>
-                    <option value="3">inbox 3</option>
+                    <option value="1">alicia@example.com</option>
+                    <option value="2">alicia@proton.me</option>
+                    <option value="3">alicia@me.com</option>
                 </x-select>
             </div>
 
@@ -71,7 +71,7 @@
             @else
                 <div class="grid h-full place-content-center">
                     <div class="flex flex-col items-center">
-                        <x-lucide-mail class="text-gray-400 size-24" />
+                        <x-lucide-mail class="size-24 text-gray-400" />
                         <p>Select a message</p>
                     </div>
                 </div>
