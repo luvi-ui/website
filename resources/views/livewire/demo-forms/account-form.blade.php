@@ -40,7 +40,7 @@
                             role="combobox"
                             class="w-[200px] justify-between"
                         >
-                            <x-lucide-caret-sort class="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                            <x-lucide-chevrons-up-down class="ml-2 h-4 w-4 shrink-0 opacity-50" />
                         </x-button>
                     </x-popover.trigger>
                     <x-popover.content class="w-[200px] p-0">
