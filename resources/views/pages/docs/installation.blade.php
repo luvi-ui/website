@@ -12,7 +12,7 @@
         <x-typography.p>
             You can install this package via composer:
             <pre class="mt-6"><x-torchlight-code language='shell'>
-                    composer require luvi-ui/laravel-luvi --dev
+                    composer require luvi-ui/laravel-luvi
                 </x-torchlight-code></pre>
         </x-typography.p>
 
