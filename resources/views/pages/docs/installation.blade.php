@@ -162,7 +162,25 @@
         <x-typography.p>
             Make sure you load the published stylesheet in your main template:
             <pre class="mt-6"><x-torchlight-code language='blade'>
-                @@vite(['resources/css/luvi-ui.css', 'resources/js/app.js'])
+                @@vite(['resources/css/luvi-ui.css', 'resources/css/app.css', 'resources/js/app.js'])
+            </x-torchlight-code></pre>
+        </x-typography.p>
+
+        <x-typography.p>
+            When you bundle your app for production, make sure
+            <x-typography.inline-code>luvi-ui.css</x-typography.inline-code> is included in your
+            <x-typography.inline-code>vite.config.js</x-typography.inline-code>:
+            <pre class="mt-6"><x-torchlight-code language='javascript'>
+                plugins: [
+                    laravel({
+                        input: [
+                            "resources/css/app.css",
+                            "resources/css/luvi-ui.css", // [tl! add]
+                            "resources/js/app.js",
+                        ],
+                        refresh: true,
+                    }),
+                ],
             </x-torchlight-code></pre>
         </x-typography.p>
 
