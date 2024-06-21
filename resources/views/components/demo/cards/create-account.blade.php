@@ -1,9 +1,9 @@
 <x-card>
     <x-card.header class="space-y-1">
         <x-card.title class="text-2xl">Create an account</x-card.title>
-        <x-card.Description>
+        <x-card.description>
             Enter your email below to create your account
-        </x-card.Description>
+        </x-card.description>
     </x-card.header>
     <x-card.content class="grid gap-4">
         <div class="grid grid-cols-2 gap-6">
