@@ -49,7 +49,7 @@
                             class="-m-3"
                         >
                             <div class="flex items-center border-b px-3">
-                                <x-lucide-magnifying-glass class="mr-2 h-4 w-4 shrink-0 opacity-50" />
+                                <x-lucide-search class="mr-2 h-4 w-4 shrink-0 opacity-50" />
                                 <x-input
                                     x-searchable:input
                                     class="!border-0 !ring-0 !px-0 h-10 placeholder:text-muted-foreground"
