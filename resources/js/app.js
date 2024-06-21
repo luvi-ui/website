@@ -1,4 +1,5 @@
-import "../../vendor/masmerise/livewire-toaster/resources/js";
+import collapse from "@alpinejs/collapse";
+import anchor from "@alpinejs/anchor";
 
 document.addEventListener(
     "alpine:init",
@@ -8,6 +9,8 @@ document.addEventListener(
         for (const path in modules) {
             window.Alpine.plugin(modules[path].default);
         }
+        window.Alpine.plugin(collapse);
+        window.Alpine.plugin(anchor);
     },
     { once: true },
 );
