@@ -41,7 +41,7 @@
 
 <div>
     <div class="grid grid-cols-12 rounded-lg">
-        <div class="col-span-2">
+        <div class="hidden lg:block col-span-2">
             <div class="p-4">
                 <x-select
                     x-on:change="Livewire.navigate(`/examples/mail/${$event.target.value}/`)"
@@ -58,14 +58,14 @@
             </div>
         </div>
 
-        <div class="col-span-3 border-l">
+        <div class="col-span-full lg:col-span-3 border-l">
             <livewire:demo-mail.mail-list
                 :inbox="$inbox"
                 :selected="$mail?->id"
             />
         </div>
 
-        <div class="col-span-7 border-l">
+        <div class="col-span-full lg:col-span-7 border-l">
             @if ($mail)
                 <x-demo.mail.display :mail="$mail" />
             @else
