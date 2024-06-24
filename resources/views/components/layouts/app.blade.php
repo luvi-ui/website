@@ -25,6 +25,14 @@
         src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"
     ></script>
 
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script
+        src="https://cdn.usefathom.com/script.js"
+        data-site="NVCRTTIY"
+        defer
+    ></script>
+    <!-- / Fathom -->
+
     <!-- Styles -->
     @vite(['resources/css/luvi-ui.css', 'resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
