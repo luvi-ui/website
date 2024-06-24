@@ -15,10 +15,8 @@
 
     <x-typography.p>
         The variables published there will match the "New York" theme from shadcn/ui. The full list of variables can be
-        found in the official <a
-            href="https://ui.shadcn.com/docs/theming#list-of-variables"
-            class="font-medium underline underline-offset-4"
-        >shadcn/ui documentation</a>.
+        found in the official <x-link href="https://ui.shadcn.com/docs/theming#list-of-variables">shadcn/ui
+            documentation</x-link>.
     </x-typography.p>
 
     <h2>Adding new colors</h2>

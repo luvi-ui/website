@@ -46,10 +46,8 @@
             </x-typography.list>
 
             Luvi UI is going to publish Blade components you can use in your existing projects. Some of these
-            components require <a
-                href="https://alpinejs.dev/"
-                class="font-medium underline underline-offset-4"
-            >Alpine.js</a> in order to work. Livewire comes already bundled with Alpine.js or you can install Alpine.js
+            components require <x-link href="https://alpinejs.dev/">Alpine.js</x-link> in order to work. Livewire comes
+            already bundled with Alpine.js or you can install Alpine.js
             independently.
 
             For either case we have configuration steps in the following sections.
@@ -57,10 +55,9 @@
 
         <h2>Livewire</h2>
         <x-typography.p>
-            You can install Livewire as described in the installation guide <a
+            You can install Livewire as described in the installation guide <x-link
                 href="https://livewire.laravel.com/docs/installation"
-                class="font-medium underline underline-offset-4"
-            >here</a>. Ensure that Livewire injects its Javascript on your page as described in the docs.
+            >here</x-link>. Ensure that Livewire injects its Javascript on your page as described in the docs.
 
             You also need to install the following plugins:
             <pre class="mt-6"><x-torchlight-code language='shell'>
@@ -94,10 +91,9 @@
 
         <h2>Alpine</h2>
         <x-typography.p>
-            You can install Alpine.js as described in the Alpine.js installation guide <a
+            You can install Alpine.js as described in the Alpine.js installation guide <x-link
                 href="https://alpinejs.dev"
-                class="font-medium underline underline-offset-4"
-            >here</a>. You need to install the following plugins:
+            >here</x-link>. You need to install the following plugins:
 
             <pre class="mt-6"><x-torchlight-code language='shell'>
                     npm install @alpinejs/anchor @alpinejs/collapse
@@ -133,10 +129,7 @@
         <x-typography.p>
             If you don't have Tailwind CSS installed in your project you can install it as described in the Tailwind CSS
             framework installation guide
-            <a
-                href="https://tailwindcss.com/docs/guides/laravel"
-                class="font-medium underline underline-offset-4"
-            >here</a>.
+            <x-link href="https://tailwindcss.com/docs/guides/laravel">here</x-link>.
 
             <x-typography.p>
                 You also need the following plugins:
@@ -186,10 +179,9 @@
 
         <h2>Icons</h2>
         <x-typography.p>
-            If you would like to have the same look and feel as seen in the examples, you need to install the <a
+            If you would like to have the same look and feel as seen in the examples, you need to install the <x-link
                 href="https://github.com/mallardduck/blade-lucide-icons/"
-                class="font-medium underline underline-offset-4"
-            >Lucide</a>
+            >Lucide</x-link>
             icon set:
             <pre class="mt-6"><x-torchlight-code language='shell'>
                     composer require mallardduck/blade-lucide-icons

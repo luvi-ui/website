@@ -15,12 +15,9 @@
     <x-typography.p>
         Pooh always liked a little something at eleven o'clock in the morning, and he was very glad to see Rabbit
         getting out the plates and mugs.
-        <a
-            href="#"
-            class="font-medium underline text-primary underline-offset-4"
-        >
+        <x-link href="#">
             "It isn't much good having anything exciting, if you can't share it with somebody."
-        </a>
+        </x-link>
     </x-typography.p>
     <x-typography.blockquote>
         "You can't stay in your corner of the forest waiting for others to come to you. You have to go to them
