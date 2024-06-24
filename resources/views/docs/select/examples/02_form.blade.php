@@ -13,7 +13,7 @@
         </x-select>
         <x-form.description>
             You can manage verified email addresses in your
-            <a href="/examples/forms">email settings</a>.
+            <x-link href="/examples/forms">email settings</x-link>.
         </x-form.description>
         <x-form.message />
     </x-form.item>

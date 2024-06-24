@@ -7,10 +7,9 @@
         <h2>A word of caution</h2>
         <x-typography.p>
             This project is still a work in progress and does not yet provide all the components that shadcn itself
-            offers. We do our best to approach feature parity but it's a long way. To accelerate this goal <a
+            offers. We do our best to approach feature parity but it's a long way. To accelerate this goal <x-link
                 href="https://github.com/luvi-ui/laravel-luvi"
-                class="font-medium underline underline-offset-4"
-            >pull requests</a>
+            >pull requests</x-link>
             are welcome.
         </x-typography.p>
 
@@ -87,10 +86,7 @@
                         Which frameworks are supported?
                     </x-accordion.trigger>
                     <x-accordion.content>
-                        You can use it only with the <a
-                            href="https://laravel.com/"
-                            class="font-medium underline underline-offset-4"
-                        >Laravel</a> framework.
+                        You can use it only with the <x-link href="https://laravel.com/">Laravel</x-link> framework.
                     </x-accordion.content>
                 </x-accordion.item>
 
