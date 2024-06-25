@@ -8,7 +8,7 @@
         <x-installation name="form" />
         <x-usage name="form" />
         <h2>Examples</h2>
-        <x-preview-code code="{{ app_path('Livewire/DemoForms/ProfileForm.php') }}">
+        <x-preview-code code="Livewire/DemoForms/ProfileForm.php">
             <x-slot:preview>
                 <livewire:demo-forms.profile-form />
             </x-slot:preview>

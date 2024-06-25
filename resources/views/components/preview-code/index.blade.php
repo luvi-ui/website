@@ -2,9 +2,15 @@
     'preview' => '',
     'code' => '',
 ])
+@php
+    $code = \File::exists(resource_path($code)) ? resource_path($code) : app_path($code);
+    $codeToCopy = file_get_contents($code);
+@endphp
 
 <div class="pb-12 pt-8">
-    <div x-data="{ showPreview: true }">
+    <div x-data="{
+        showPreview: true,
+    }">
         <div class="flex items-center justify-between pb-3">
             <div
                 class="inline-flex h-9 items-center text-muted-foreground w-full justify-start rounded-none border-b bg-transparent p-0">
@@ -27,8 +33,10 @@
 
         <div
             x-show="showPreview"
-            class="preview flex min-h-[350px] w-full justify-center p-10 items-center rounded-md border"
+            class="preview relative flex min-h-80 w-full justify-center p-10 items-center rounded-md border"
         >
+            <x-copy-to-clipboard :code=$codeToCopy />
+
             @if ($preview instanceof Illuminate\View\ComponentSlot)
                 {{ $preview }}
             @else
@@ -38,9 +46,10 @@
 
         <div
             x-show="!showPreview"
-            class="rounded-md"
+            class="relative rounded-md"
         >
-            <pre><x-torchlight-code language='blade' contents="{{ $code }}" /></pre>
+            <x-copy-to-clipboard variant="ghost" class="text-white" :code=$codeToCopy />
+            <pre><x-torchlight-code class="min-h-80" language='blade' contents="{{ $code }}" /></pre>
         </div>
     </div>
 </div>

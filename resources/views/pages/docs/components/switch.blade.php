@@ -8,7 +8,7 @@
         <x-installation name="switch" />
         <x-usage name="switch" />
         <h2>Examples</h2>
-        <x-preview-code code="{{ app_path('Livewire/Docs/DemoSwitch.php') }}">
+        <x-preview-code code="Livewire/Docs/DemoSwitch.php">
             <x-slot:preview>
                 <livewire:docs.demo-switch />
             </x-slot:preview>
