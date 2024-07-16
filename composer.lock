@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a1651652e50a70cb122d9197b3bb130",
+    "content-hash": "a8a87931dbe239845e53ed3131d95ea4",
     "packages": [
         {
             "name": "blade-ui-kit/blade-icons",
@@ -7002,16 +7002,16 @@
         },
         {
             "name": "luvi-ui/laravel-luvi",
-            "version": "v0.2.0-alpha",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/luvi-ui/laravel-luvi.git",
-                "reference": "ffbe01b3ae5a79169c367984ead685fb94f3f857"
+                "reference": "3d6e0d78a31de96f79f32830c7deedd198fdea73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/ffbe01b3ae5a79169c367984ead685fb94f3f857",
-                "reference": "ffbe01b3ae5a79169c367984ead685fb94f3f857",
+                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/3d6e0d78a31de96f79f32830c7deedd198fdea73",
+                "reference": "3d6e0d78a31de96f79f32830c7deedd198fdea73",
                 "shasum": ""
             },
             "require": {
@@ -7063,7 +7063,7 @@
             ],
             "support": {
                 "issues": "https://github.com/luvi-ui/laravel-luvi/issues",
-                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.2.0-alpha"
+                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.3.0"
             },
             "funding": [
                 {
@@ -7071,7 +7071,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-21T12:29:56+00:00"
+            "time": "2024-07-08T22:31:06+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -9936,9 +9936,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "luvi-ui/laravel-luvi": 15
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
