@@ -13,6 +13,8 @@
                 Parkstr. 10
                 <br>
                 27232 Sulingen
+                <br>
+                Germany
             </x-typography.p>
             <x-typography.p>
                 Geschäftsführer Thore Sünert
