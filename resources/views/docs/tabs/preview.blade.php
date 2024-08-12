@@ -3,18 +3,10 @@
     class="w-[400px]"
 >
     <x-tabs.list class="grid w-full grid-cols-2">
-        <x-tabs.trigger
-            html-for="account"
-            value="account"
-            id="account"
-        >
+        <x-tabs.trigger value="account">
             Account
         </x-tabs.trigger>
-        <x-tabs.trigger
-            html-for="password"
-            value="password"
-            id="password"
-        >
+        <x-tabs.trigger value="password">
             Password
         </x-tabs.trigger>
     </x-tabs.list>
