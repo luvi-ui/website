@@ -1,4 +1,10 @@
 <div class="flex flex-col gap-8">
+    <div class="w-1/2">
+        <x-input
+            wire:model.live.debounce.250="search"
+            placeholder="Search"
+        />
+    </div>
     <table class="min-w-full table-fixed divide-y divide-gray-300 text-gray-800">
         <thead>
             <tr>
