@@ -1,0 +1,1 @@
+<livewire:demo-data-table />
