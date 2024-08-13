@@ -24,6 +24,11 @@ class DemoDataTable extends Component
         $this->resetPage();
     }
 
+    public function refund(DemoOrder $order)
+    {
+        $order->refund();
+    }
+
     public function sortBy($column)
     {
         if ($this->sortCol === $column) {

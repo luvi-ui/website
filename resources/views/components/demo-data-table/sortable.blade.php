@@ -3,7 +3,7 @@
 <x-button
     wire:click="sortBy('{{ $column }}')"
     variant="ghost"
-    class="group"
+    {{ $attributes->twMerge('group') }}
 >
     {{ $slot }}
     @if ($sortCol === $column)

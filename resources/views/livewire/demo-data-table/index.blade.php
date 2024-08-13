@@ -41,6 +41,9 @@
                         Amount
                     </x-demo-data-table.sortable>
                 </th>
+                <th>
+                    {{-- Dropdown Menus --}}
+                </th>
             </tr>
         </thead>
         <tbody class="divide-y divide-gray-200 bg-white text-gray-700">
@@ -58,8 +61,23 @@
                     <td class="whitespace-nowrap p-3 text-sm">
                         {{ $order->created_at->format('d M Y') }}
                     </td>
-                    <td class="whitespace-nowrap p-3 text-sm">
+                    <td class="whitespace-nowrap p-3 text-sm text-right">
                         {{ $order->amount }} €
+                    </td>
+                    <td class="whitespace-nowrap p-3 text-sm">
+                        <div class="flex items-center justify-end">
+                            <x-dropdown-menu>
+                                <x-dropdown-menu.trigger variant="ghost">
+                                    <x-lucide-ellipsis class="size-4 text-gray-400" />
+                                </x-dropdown-menu.trigger>
+                                <x-dropdown-menu.content>
+                                    {{-- <x-dropdown-menu.label>My Account</x-dropdown-menu.label> --}}
+                                    {{-- <x-dropdown-menu.separator /> --}}
+                                    <x-dropdown-menu.item
+                                        wire:click="refund({{ $order->id }})">Refund</x-dropdown-menu.item>
+                                </x-dropdown-menu.content>
+                            </x-dropdown-menu>
+                        </div>
                     </td>
                 </tr>
             @endforeach
