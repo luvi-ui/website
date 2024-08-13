@@ -9,10 +9,22 @@
         <thead>
             <tr>
                 <th class="p-3 text-left text-sm font-semibold text-gray-800">
-                    <div>Order #</div>
+                    <x-demo-data-table.sortable
+                        column="number"
+                        :$sortCol
+                        :$sortAsc
+                    >
+                        Order #
+                    </x-demo-data-table.sortable>
                 </th>
                 <th class="p-3 text-left text-sm font-semibold text-gray-800">
-                    <div>Status</div>
+                    <x-demo-data-table.sortable
+                        column="status"
+                        :$sortCol
+                        :$sortAsc
+                    >
+                        Status
+                    </x-demo-data-table.sortable>
                 </th>
                 <th class="p-3 text-left text-sm font-semibold text-gray-800">
                     <div>Customer</div>
@@ -21,7 +33,13 @@
                     <div>Date</div>
                 </th>
                 <th class="p-3 text-left text-sm font-semibold text-gray-800">
-                    <div>Amount</div>
+                    <x-demo-data-table.sortable
+                        column="amount"
+                        :$sortCol
+                        :$sortAsc
+                    >
+                        Amount
+                    </x-demo-data-table.sortable>
                 </th>
             </tr>
         </thead>
@@ -30,19 +48,19 @@
                 <tr wire:key="{{ $loop->index }}">
                     <td class="whitespace-nowrap p-3 text-sm">
                         {{ $order->number }}
-                    <td>
+                    </td>
                     <td class="whitespace-nowrap p-3 text-sm">
                         {{ $order->status }}
-                    <td>
+                    </td>
                     <td class="whitespace-nowrap p-3 text-sm">
                         {{ $order->customer }}
-                    <td>
+                    </td>
                     <td class="whitespace-nowrap p-3 text-sm">
                         {{ $order->created_at->format('d M Y') }}
-                    <td>
+                    </td>
                     <td class="whitespace-nowrap p-3 text-sm">
                         {{ $order->amount }} €
-                    <td>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
