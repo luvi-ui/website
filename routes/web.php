@@ -6,6 +6,7 @@ use App\Livewire\DemoForms\AppearanceForm;
 use App\Livewire\DemoForms\NotificationsForm;
 use App\Livewire\DemoForms\ProfileForm;
 use App\Livewire\DemoMail\Mail;
+use App\Livewire\DemoTasks\Task;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,9 +30,12 @@ Route::get('/imprint', function () {
 });
 
 Route::get('/examples/cards', DemoCards::class);
+
 Route::get('/examples/forms', ProfileForm::class);
 Route::get('/examples/forms/account', AccountForm::class);
 Route::get('/examples/forms/appearance', AppearanceForm::class);
 Route::get('/examples/forms/notifications', NotificationsForm::class);
 
 Route::get('/examples/mail/{inbox}/{mail:id?}', Mail::class)->name('inbox');
+
+Route::get('/examples/tasks', Task::class);
