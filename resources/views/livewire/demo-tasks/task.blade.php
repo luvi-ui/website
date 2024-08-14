@@ -1,29 +1,3 @@
-@php
-    $tasks = [
-        (object) [
-            'id' => 'TASK-8782',
-            'title' => "You can't compress the program without quantifying the open-source SSD pixel!",
-            'status' => 'in progress',
-            'label' => 'documentation',
-            'priority' => 'medium',
-        ],
-        (object) [
-            'id' => 'TASK-7878',
-            'title' => 'Try to calculate the EXE feed, maybe it will index the multi-byte pixel!',
-            'status' => 'backlog',
-            'label' => 'documentation',
-            'priority' => 'medium',
-        ],
-        (object) [
-            'id' => 'TASK-7839',
-            'title' => 'We need to bypass the neural TCP card!',
-            'status' => 'todo',
-            'label' => 'bug',
-            'priority' => 'high',
-        ],
-    ];
-@endphp
-
 <div class="space-y-4">
     <div class="rounded-md border">
         <x-table>
@@ -90,5 +64,12 @@
                 @endforeach
             </x-table.body>
         </x-table>
+    </div>
+    {{-- Pagination... --}}
+    <div class="pt-4 flex justify-between items-center">
+        <div class="text-gray-700 text-sm">
+            Results: {{ \Illuminate\Support\Number::format($tasks->total()) }}
+        </div>
+        {{ $tasks->links('livewire.demo-tasks.pagination') }}
     </div>
 </div>
