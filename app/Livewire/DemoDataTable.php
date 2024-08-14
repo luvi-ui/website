@@ -37,7 +37,6 @@ class DemoDataTable extends Component
             $this->sortCol = $column;
             $this->sortAsc = false;
         }
-
     }
 
     protected function applySorting($query)

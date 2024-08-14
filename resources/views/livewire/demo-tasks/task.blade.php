@@ -1,22 +1,40 @@
 <div class="space-y-4">
     <div class="rounded-md border">
+        <div class="w-1/2">
+            <x-input
+                wire:model.live.debounce.250="search"
+                placeholder="Filter tasks..."
+            />
+        </div>
         <x-table>
             <x-table.header>
                 <x-table.row>
                     <x-table.head><x-checkbox /></x-table.head>
                     <x-table.head>Task</x-table.head>
                     <x-table.head>
-                        <x-local.demo-tasks.sortable>
+                        <x-local.demo-tasks.sortable
+                            column="title"
+                            :$sortCol
+                            :$sortAsc
+                        >
                             Title
                         </x-local.demo-tasks.sortable>
                     </x-table.head>
                     <x-table.head>
-                        <x-local.demo-tasks.sortable>
+                        <x-local.demo-tasks.sortable
+                            column="status"
+                            :$sortCol
+                            :$sortAsc
+                        >
                             Status
                         </x-local.demo-tasks.sortable>
                     </x-table.head>
                     <x-table.head>
-                        <x-local.demo-tasks.sortable>
+                        <x-local.demo-tasks.sortable
+                            column="priority"
+                            :$sortCol
+                            :$sortAsc
+                        >
                             Priority
                         </x-local.demo-tasks.sortable>
                     </x-table.head>
