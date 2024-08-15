@@ -58,8 +58,8 @@ class Task extends Component
         return $this->search === ''
             ? $query
             : $query
-                ->where('customer', 'like', "%$this->search%")
-                ->orWhere('number', 'like', "%$this->search%");
+                ->where('title', 'like', "%$this->search%")
+                ->orWhere('id', 'like', "%$this->search%");
     }
 
     public function render()
