@@ -9,6 +9,14 @@
                 aria-label="Pagination Navigation"
                 class="flex gap-2"
             >
+                <x-button
+                    class="size-8 p-0"
+                    variant="outline"
+                    wire:click="gotoPage(1)"
+                    :disabled="$paginator->onFirstPage()"
+                >
+                    <x-lucide-chevrons-left class="size-4" />
+                </x-button>
                 <span>
                     {{-- Previous Page Link --}}
                     @if ($paginator->onFirstPage())
@@ -80,6 +88,15 @@
                         </x-button>
                     @endif
                 </span>
+
+                <x-button
+                    class="size-8 p-0"
+                    variant="outline"
+                    wire:click="gotoPage({{ $paginator->lastPage() }})"
+                    :disabled="$paginator->onLastPage()"
+                >
+                    <x-lucide-chevrons-right class="size-4" />
+                </x-button>
             </nav>
         </div>
     </div>
