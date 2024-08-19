@@ -15,15 +15,35 @@ class Task extends Component
 
     public $search = '';
 
+    public $visible;
+
+    public $hidden;
+
     #[Url]
     public $sortCol;
 
     #[Url]
     public $sortAsc = false;
 
+    public function mount()
+    {
+        $this->visible = collect(['title', 'status', 'priority']);
+        $this->hidden = collect([]);
+    }
+
     public function updatedSearch()
     {
         $this->resetPage();
+    }
+
+    public function toggleVisibility($column)
+    {
+        if ($this->visible->contains($column)) {
+            return $this->visible = $this->visible->diff($column);
+        }
+
+        $this->visible->push($column);
+
     }
 
     public function sortByAsc($column)

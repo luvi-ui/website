@@ -18,7 +18,6 @@
         @else
             <x-lucide-chevrons-up-down class="ml-2 size-4" />
         @endif
-
     </x-dropdown-menu.trigger>
     <x-dropdown-menu.content>
         <x-dropdown-menu.item wire:click="sortByAsc('{{ $column }}')">
