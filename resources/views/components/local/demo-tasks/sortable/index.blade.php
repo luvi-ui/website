@@ -6,7 +6,19 @@
         size="sm"
         class="-ml-3 h-8"
     >
-        {{ $slot }} <x-lucide-chevrons-up-down class="ml-2 size-4" />
+        {{ $slot }}
+        @if ($sortCol === $column)
+            <div class="text-gray-400">
+                @if ($sortAsc)
+                    <x-lucide-arrow-up class="ml-2 size-4" />
+                @else
+                    <x-lucide-arrow-down class="ml-2 size-4" />
+                @endif
+            </div>
+        @else
+            <x-lucide-chevrons-up-down class="ml-2 size-4" />
+        @endif
+
     </x-dropdown-menu.trigger>
     <x-dropdown-menu.content>
         <x-dropdown-menu.item wire:click="sortByAsc('{{ $column }}')">

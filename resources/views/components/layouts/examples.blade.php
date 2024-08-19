@@ -15,6 +15,11 @@
             'link' => '/examples/forms',
             'activeWhen' => 'examples/forms',
         ],
+        [
+            'title' => 'Tasks',
+            'link' => '/examples/tasks',
+            'activeWhen' => 'examples/tasks',
+        ],
     ];
 @endphp
 
@@ -87,6 +92,11 @@
                                         class="flex h-7 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary {{ request()->is('examples/forms') || request()->is('examples/forms/*') ? 'bg-muted font-medium text-primary' : 'text-muted-foreground' }}"
                                         href="/examples/forms"
                                     >Forms</a>
+                                    <a
+                                        wire:navigate
+                                        class="flex h-7 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary {{ request()->is('examples/tasks') ? 'bg-muted font-medium text-primary' : 'text-muted-foreground' }}"
+                                        href="/examples/tasks"
+                                    >Tasks</a>
                                 </div>
                             </div>
                         </div>

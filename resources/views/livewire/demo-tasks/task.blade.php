@@ -1,11 +1,37 @@
-<div class="space-y-4">
-    <div class="rounded-md border">
+<div class="space-y-4 p-8">
+    <div class="flex justify-between">
         <div class="w-1/2">
             <x-input
                 wire:model.live.debounce.250="search"
                 placeholder="Filter tasks..."
+                class="h-8 w-[150px] lg:w-[250px]"
             />
         </div>
+        <x-dropdown-menu>
+            <x-dropdown-menu.trigger
+                variant="outline"
+                size="sm"
+                class="ml-auto hidden h-8 lg:flex"
+            >
+                <x-lucide-sliders-horizontal class="mr-2 size-4" />
+                View
+            </x-dropdown-menu.trigger>
+            <x-dropdown-menu.content class="w-56">
+                <x-dropdown-menu.label>Toggle columns</x-dropdown-menu.label>
+                <x-dropdown-menu.separator />
+                <x-dropdown-menu.checkboxitem value="title">
+                    Title
+                </x-dropdown-menu.checkboxitem>
+                <x-dropdown-menu.checkboxitem value="status">
+                    Status
+                </x-dropdown-menu.checkboxitem>
+                <x-dropdown-menu.checkboxitem value="priority">
+                    Priority
+                </x-dropdown-menu.checkboxitem>
+            </x-dropdown-menu.content>
+        </x-dropdown-menu>
+    </div>
+    <div class="rounded-md border">
         <x-table>
             <x-table.header>
                 <x-table.row>
@@ -84,7 +110,7 @@
         </x-table>
     </div>
     {{-- Pagination... --}}
-    <div class="pt-4 flex justify-between items-center">
+    <div class="flex justify-between items-center">
         <div class="text-gray-700 text-sm">
             Results: {{ \Illuminate\Support\Number::format($tasks->total()) }}
         </div>
