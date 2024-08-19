@@ -46,7 +46,7 @@
                 <x-table.row>
                     <x-table.head><x-checkbox /></x-table.head>
                     <x-table.head>Task</x-table.head>
-                    @if ($visible->contains('title'))
+                    @if ($visibleColumns->contains('title'))
                         <x-table.head>
                             <x-local.demo-tasks.sortable
                                 column="title"
@@ -57,7 +57,7 @@
                             </x-local.demo-tasks.sortable>
                         </x-table.head>
                     @endif
-                    @if ($visible->contains('status'))
+                    @if ($visibleColumns->contains('status'))
                         <x-table.head>
                             <x-local.demo-tasks.sortable
                                 column="status"
@@ -68,7 +68,7 @@
                             </x-local.demo-tasks.sortable>
                         </x-table.head>
                     @endif
-                    @if ($visible->contains('priority'))
+                    @if ($visibleColumns->contains('priority'))
                         <x-table.head>
                             <x-local.demo-tasks.sortable
                                 column="priority"
@@ -87,7 +87,7 @@
                     <x-table.row>
                         <x-table.cell><x-checkbox /></x-table.cell>
                         <x-table.cell>{{ $task->id }}</x-table.cell>
-                        @if ($visible->contains('title'))
+                        @if ($visibleColumns->contains('title'))
                             <x-table.cell>
                                 <div class="flex space-x-2">
                                     <x-badge variant="outline">{{ $task->label }}</x-badge>
@@ -97,7 +97,7 @@
                                 </div>
                             </x-table.cell>
                         @endif
-                        @if ($visible->contains('status'))
+                        @if ($visibleColumns->contains('status'))
                             <x-table.cell>
                                 <div class="flex w-[100px] items-center">
                                     <x-lucide-timer class="mr-2 size-4 text-muted-foreground" />
@@ -105,7 +105,7 @@
                                 </div>
                             </x-table.cell>
                         @endif
-                        @if ($visible->contains('priority'))
+                        @if ($visibleColumns->contains('priority'))
                             <x-table.cell>
                                 <div class="flex items-center">
                                     <x-lucide-arrow-right class="mr-2 size-4 text-muted-foreground" />

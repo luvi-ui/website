@@ -15,9 +15,7 @@ class Task extends Component
 
     public $search = '';
 
-    public $visible;
-
-    public $hidden;
+    public $visibleColumns;
 
     #[Url]
     public $sortCol;
@@ -27,8 +25,7 @@ class Task extends Component
 
     public function mount()
     {
-        $this->visible = collect(['title', 'status', 'priority']);
-        $this->hidden = collect([]);
+        $this->visibleColumns = collect(['title', 'status', 'priority']);
     }
 
     public function updatedSearch()
@@ -38,11 +35,11 @@ class Task extends Component
 
     public function toggleVisibility($column)
     {
-        if ($this->visible->contains($column)) {
-            return $this->visible = $this->visible->diff($column);
+        if ($this->visibleColumns->contains($column)) {
+            return $this->visibleColumns = $this->visibleColumns->diff($column);
         }
 
-        $this->visible->push($column);
+        $this->visibleColumns->push($column);
 
     }
 
