@@ -10,6 +10,9 @@
         />
         <x-installation name="input" />
         <x-usage name="input" />
-        <x-examples name="input" />
+        <x-examples
+            name="input"
+            class="[&_input]:max-w-xs"
+        />
     </div>
 </x-layouts.docs>

@@ -1,4 +1,4 @@
-<x-form>
+<x-form class="w-2/3 [&_input]:max-w-full">
     <x-form.item>
         <x-form.label>Username</x-form.label>
         <x-input

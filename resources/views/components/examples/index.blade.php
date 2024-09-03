@@ -26,5 +26,6 @@
     <x-preview-code
         preview="{{ $example->preview }}"
         code="{{ $example->code }}"
+        {{ $attributes->twMerge('') }}
     />
 @endforeach
