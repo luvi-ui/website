@@ -244,6 +244,7 @@ function handleCheckboxItem(el, Alpine) {
                     __isChecked: false,
                     __toggle() {
                         this.__isChecked = !this.__isChecked;
+                        this.$el.querySelector("input").click();
                     },
                     init() {
                         this.__isDisabled = this.$el.ariaDisabled === "true";
