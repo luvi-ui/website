@@ -14,15 +14,19 @@
             'relative flex w-full cursor-default select-none items-center',
             'rounded-sm py-1.5 text-sm outline-none transition-colors',
             'opacity-50 cursor-not-allowed' => $disabled,
-            'pl-8',
+            'p-2',
         ]) }}
 >
-
-    <span
-        class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center"
-        x-show="__isChecked"
-    >
-        <x-lucide-check class="w-4 h-4" />
-    </span>
-    {{ $slot }}
+    <label class="group w-full flex items-center gap-x-2">
+        <div class="invisible group-has-[:checked]:visible">
+            <x-lucide-check class="w-4 h-4" />
+        </div>
+        <input
+            class="sr-only"
+            type="checkbox"
+            value="{{ $attributes->get('value') }}"
+            wire:model.live="visibleColumns"
+        />
+        {{ $slot }}
+    </label>
 </li>
