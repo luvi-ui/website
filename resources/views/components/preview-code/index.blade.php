@@ -7,7 +7,7 @@
     $codeToCopy = file_get_contents($code);
 @endphp
 
-<div class="pb-12 pt-8">
+<div {{ $attributes->twMerge('pb-12 pt-8') }}>
     <div x-data="{
         showPreview: true,
     }">
@@ -48,7 +48,11 @@
             x-show="!showPreview"
             class="relative rounded-md"
         >
-            <x-copy-to-clipboard variant="ghost" class="text-white" :code=$codeToCopy />
+            <x-copy-to-clipboard
+                variant="ghost"
+                class="text-white"
+                :code=$codeToCopy
+            />
             <pre><x-torchlight-code class="min-h-80" language='blade' contents="{{ $code }}" /></pre>
         </div>
     </div>
