@@ -22,8 +22,7 @@
         <input
             class="sr-only"
             type="checkbox"
-            value="{{ $attributes->get('value') }}"
-            {{ $attributes->whereStartsWith('wire:model', 'x-model') }}
+            {{ $attributes }}
         />
         {{ $slot }}
     </label>
