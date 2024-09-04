@@ -12,10 +12,18 @@
                 x-show="$wire.selectedTaskIds.length > 0"
                 x-cloak
             >
-                <p>
-                    <span x-text="$wire.selectedTaskIds.length"></span>
-                    bulk action
-                </p>
+                <div class="flex items-center space-x-4">
+                    <x-typography.muted>
+                        <span x-text="$wire.selectedTaskIds.length"></span>
+                        selected
+                    </x-typography.muted>
+                    <x-button
+                        variant="outline"
+                        size="sm"
+                    >
+                        <x-lucide-archive class="mr-2 size-4" /> Archive
+                    </x-button>
+                </div>
             </div>
             <x-dropdown-menu>
                 <x-dropdown-menu.trigger
@@ -155,5 +163,4 @@
         </div>
         {{ $tasks->links('livewire.demo-tasks.pagination') }}
     </div>
-    @json($selectedTaskIds)
 </div>
