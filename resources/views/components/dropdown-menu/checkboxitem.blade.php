@@ -7,9 +7,7 @@
     x-dropdown-menu:checkboxitem
     aria-label="{{ $slot }}"
     tabindex="-1"
-    {{ $attributes->when($disabled, function ($attributes) {
-            return $attributes->except(['x-model', 'wire:model']);
-        })->twMerge([
+    {{ $attributes->whereDoesntStartWith(['wire:model', 'x-model', 'value'])->twMerge([
             'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
             'relative flex w-full cursor-default select-none items-center',
             'rounded-sm py-1.5 text-sm outline-none transition-colors',
@@ -25,7 +23,7 @@
             class="sr-only"
             type="checkbox"
             value="{{ $attributes->get('value') }}"
-            wire:model.live="visibleColumns"
+            {{ $attributes->whereStartsWith('wire:model', 'x-model') }}
         />
         {{ $slot }}
     </label>

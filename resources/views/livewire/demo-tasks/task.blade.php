@@ -19,13 +19,22 @@
             <x-dropdown-menu.content class="w-56">
                 <x-dropdown-menu.label>Toggle columns</x-dropdown-menu.label>
                 <x-dropdown-menu.separator />
-                <x-dropdown-menu.checkboxitem value="title">
+                <x-dropdown-menu.checkboxitem
+                    value="title"
+                    wire:model.live="visibleColumns"
+                >
                     Title
                 </x-dropdown-menu.checkboxitem>
-                <x-dropdown-menu.checkboxitem value="status">
+                <x-dropdown-menu.checkboxitem
+                    value="status"
+                    wire:model.live="visibleColumns"
+                >
                     Status
                 </x-dropdown-menu.checkboxitem>
-                <x-dropdown-menu.checkboxitem value="priority">
+                <x-dropdown-menu.checkboxitem
+                    value="priority"
+                    wire:model.live="visibleColumns"
+                >
                     Priority
                 </x-dropdown-menu.checkboxitem>
             </x-dropdown-menu.content>
