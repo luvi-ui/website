@@ -7,31 +7,34 @@ use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-#[Layout('components.layouts.examples')]
+#[Layout("components.layouts.examples")]
 class Task extends Component
 {
     use UseDataTable, WithPagination;
 
-    public $visibleColumns = ['title', 'status', 'priority'];
+    public $visibleColumns = ["title", "status", "priority"];
 
-    public $selectedTaskIds = [];
+    public $matchColumns = [
+        "title" => "title",
+        "status" => "status",
+        "priority" => "priority",
+    ];
 
-    public $taskIdsOnPage = [];
+    public function query()
+    {
+        return DemoTask::query();
+    }
 
     public function render()
     {
-        $query = DemoTask::query();
-
-        $query = $this->applySearch($query);
-
-        $query = $this->applySorting($query);
+        $query = $this->getQuery(10);
 
         $tasks = $query->paginate(10);
 
-        $this->taskIdsOnPage = $tasks->map(fn ($task) => (string) $task->id)->toArray();
+        $this->makeAllCheckable($tasks);
 
-        return view('livewire.demo-tasks.task', [
-            'tasks' => $tasks,
+        return view("livewire.demo-tasks.task", [
+            "tasks" => $tasks,
         ]);
     }
 }

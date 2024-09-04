@@ -2,6 +2,7 @@
 
 namespace App\Livewire\DemoTasks;
 
+use Illuminate\Support\Arr;
 use Livewire\Attributes\Url;
 
 trait Sortable
@@ -24,16 +25,16 @@ trait Sortable
         $this->sortAsc = false;
     }
 
-    protected function applySorting($query)
+    protected function applySort($query)
     {
         if ($this->sortCol) {
-            $column = match ($this->sortCol) {
-                'title' => 'title',
-                'status' => 'status',
-                'priority' => 'priority',
-            };
+            $column = Arr::get(
+                $this->matchColumns,
+                $this->sortCol,
+                $this->sortCol
+            );
 
-            $query->orderBy($column, $this->sortAsc ? 'asc' : 'desc');
+            $query->orderBy($column, $this->sortAsc ? "asc" : "desc");
         }
 
         return $query;
