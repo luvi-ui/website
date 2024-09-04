@@ -29,7 +29,7 @@
             Desc
         </x-dropdown-menu.item>
         <x-dropdown-menu.separator />
-        <x-dropdown-menu.item>
+        <x-dropdown-menu.item wire:click="toggleVisibility('{{ $column }}')">
             <x-lucide-eye-off class="mr-2 size-3.5 text-muted-foreground/70" />
             Hide
         </x-dropdown-menu.item>
