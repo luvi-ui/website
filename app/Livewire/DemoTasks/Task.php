@@ -23,6 +23,10 @@ class Task extends Component
     #[Url]
     public $sortAsc = false;
 
+    public $selectedTaskIds = [];
+
+    public $taskIdsOnPage = [];
+
     public function mount()
     {
         $this->visibleColumns = collect(['title', 'status', 'priority']);
@@ -87,8 +91,12 @@ class Task extends Component
 
         $query = $this->applySorting($query);
 
+        $tasks = $query->paginate(10);
+
+        $this->taskIdsOnPage = $tasks->map(fn ($task) => (string) $task->id)->toArray();
+
         return view('livewire.demo-tasks.task', [
-            'tasks' => $query->paginate(10),
+            'tasks' => $tasks,
         ]);
     }
 }

@@ -7,44 +7,57 @@
                 class="h-8 w-[150px] lg:w-[250px]"
             />
         </div>
-        <x-dropdown-menu>
-            <x-dropdown-menu.trigger
-                variant="outline"
-                size="sm"
-                class="ml-auto hidden h-8 lg:flex"
+        <div class="flex items-center space-x-4">
+            <div
+                x-show="$wire.selectedTaskIds.length > 0"
+                x-cloak
             >
-                <x-lucide-sliders-horizontal class="mr-2 size-4" />
-                View
-            </x-dropdown-menu.trigger>
-            <x-dropdown-menu.content class="w-56">
-                <x-dropdown-menu.label>Toggle columns</x-dropdown-menu.label>
-                <x-dropdown-menu.separator />
-                <x-dropdown-menu.checkboxitem
-                    value="title"
-                    wire:model.live="visibleColumns"
+                <p>
+                    <span x-text="$wire.selectedTaskIds.length"></span>
+                    bulk action
+                </p>
+            </div>
+            <x-dropdown-menu>
+                <x-dropdown-menu.trigger
+                    variant="outline"
+                    size="sm"
+                    class="ml-auto hidden h-8 lg:flex"
                 >
-                    Title
-                </x-dropdown-menu.checkboxitem>
-                <x-dropdown-menu.checkboxitem
-                    value="status"
-                    wire:model.live="visibleColumns"
-                >
-                    Status
-                </x-dropdown-menu.checkboxitem>
-                <x-dropdown-menu.checkboxitem
-                    value="priority"
-                    wire:model.live="visibleColumns"
-                >
-                    Priority
-                </x-dropdown-menu.checkboxitem>
-            </x-dropdown-menu.content>
-        </x-dropdown-menu>
+                    <x-lucide-sliders-horizontal class="mr-2 size-4" />
+                    View
+                </x-dropdown-menu.trigger>
+                <x-dropdown-menu.content class="w-56">
+                    <x-dropdown-menu.label>Toggle columns</x-dropdown-menu.label>
+                    <x-dropdown-menu.separator />
+                    <x-dropdown-menu.checkboxitem
+                        value="title"
+                        wire:model.live="visibleColumns"
+                    >
+                        Title
+                    </x-dropdown-menu.checkboxitem>
+                    <x-dropdown-menu.checkboxitem
+                        value="status"
+                        wire:model.live="visibleColumns"
+                    >
+                        Status
+                    </x-dropdown-menu.checkboxitem>
+                    <x-dropdown-menu.checkboxitem
+                        value="priority"
+                        wire:model.live="visibleColumns"
+                    >
+                        Priority
+                    </x-dropdown-menu.checkboxitem>
+                </x-dropdown-menu.content>
+            </x-dropdown-menu>
+        </div>
     </div>
     <div class="rounded-md border">
         <x-table>
             <x-table.header>
                 <x-table.row>
-                    <x-table.head><x-checkbox /></x-table.head>
+                    <x-table.head>
+                        <x-local.demo-tasks.check-all />
+                    </x-table.head>
                     <x-table.head>Task</x-table.head>
                     @if ($visibleColumns->contains('title'))
                         <x-table.head>
@@ -84,8 +97,13 @@
             </x-table.header>
             <x-table.body>
                 @foreach ($tasks as $task)
-                    <x-table.row>
-                        <x-table.cell><x-checkbox /></x-table.cell>
+                    <x-table.row wire:key="{{ $task->id }}">
+                        <x-table.cell>
+                            <x-checkbox
+                                wire:model.live="selectedTaskIds"
+                                value="{{ $task->id }}"
+                            />
+                        </x-table.cell>
                         <x-table.cell>{{ $task->id }}</x-table.cell>
                         @if ($visibleColumns->contains('title'))
                             <x-table.cell>
@@ -137,4 +155,5 @@
         </div>
         {{ $tasks->links('livewire.demo-tasks.pagination') }}
     </div>
+    @json($selectedTaskIds)
 </div>
