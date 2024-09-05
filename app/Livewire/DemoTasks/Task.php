@@ -3,6 +3,9 @@
 namespace App\Livewire\DemoTasks;
 
 use App\Models\DemoTask;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Builder;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -20,12 +23,25 @@ class Task extends Component
         "priority" => "priority",
     ];
 
-    public function query()
+    public function query(): Builder
     {
         return DemoTask::query();
     }
 
-    public function render()
+    /**
+     * @param Builder $query
+     */
+    public function searchQuery($query): Builder
+    {
+        return $query
+            ->where("title", "like", "%$this->search%")
+            ->orWhere("id", "like", "%$this->search%");
+    }
+
+    /**
+     * @return View|Factory
+     */
+    public function render(): View|Factory
     {
         $query = $this->getQuery(10);
 

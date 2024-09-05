@@ -4,11 +4,7 @@ namespace App\Livewire\DemoTasks;
 
 trait UseDataTable
 {
-    use CanHideColumns, Searchable, Sortable;
-
-    public $selectedTaskIds = [];
-
-    public $taskIdsOnPage = [];
+    use CanHideColumns, Searchable, Sortable, CanCheckAll;
 
     public function getQuery()
     {
@@ -18,11 +14,5 @@ trait UseDataTable
         $this->applySort($query);
 
         return $query;
-    }
-    public function makeAllCheckable($records)
-    {
-        $this->taskIdsOnPage = $records
-            ->map(fn($record) => (string) $record->id)
-            ->toArray();
     }
 }

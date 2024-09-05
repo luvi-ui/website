@@ -4,7 +4,7 @@ namespace App\Livewire\DemoTasks;
 
 trait Searchable
 {
-    public $search = '';
+    public $search = "";
 
     public function updatedSearch()
     {
@@ -13,10 +13,6 @@ trait Searchable
 
     public function applySearch($query)
     {
-        return $this->search === ''
-            ? $query
-            : $query
-                ->where('title', 'like', "%$this->search%")
-                ->orWhere('id', 'like', "%$this->search%");
+        return $this->search === "" ? $query : $this->searchQuery($query);
     }
 }

@@ -1,4 +1,4 @@
-<div class="space-y-4 p-8">
+<div id="tasks-table" class="space-y-4 p-8">
     <div class="flex justify-between">
         <div class="w-1/2">
             <x-input
@@ -60,15 +60,15 @@
         </div>
     </div>
     <div class="rounded-md border">
-        <x-table>
-            <x-table.header>
-                <x-table.row>
-                    <x-table.head>
-                        <x-local.demo-tasks.check-all />
-                    </x-table.head>
-                    <x-table.head>Task</x-table.head>
+        <x-datatable>
+            <x-datatable.header>
+                <x-datatable.row>
+                    <x-datatable.head>
+                        <x-datatable.check-all />
+                    </x-datatable.head>
+                    <x-datatable.head>Task</x-datatable.head>
                     @if ($this->isVisible('title'))
-                        <x-table.head>
+                        <x-datatable.head>
                             <x-local.demo-tasks.sortable
                                 column="title"
                                 :$sortCol
@@ -76,10 +76,10 @@
                             >
                                 Title
                             </x-local.demo-tasks.sortable>
-                        </x-table.head>
+                        </x-datatable.head>
                     @endif
                     @if ($this->isVisible('status'))
-                        <x-table.head>
+                        <x-datatable.head>
                             <x-local.demo-tasks.sortable
                                 column="status"
                                 :$sortCol
@@ -87,10 +87,10 @@
                             >
                                 Status
                             </x-local.demo-tasks.sortable>
-                        </x-table.head>
+                        </x-datatable.head>
                     @endif
                     @if ($this->isVisible('priority'))
-                        <x-table.head>
+                        <x-datatable.head>
                             <x-local.demo-tasks.sortable
                                 column="priority"
                                 :$sortCol
@@ -98,14 +98,14 @@
                             >
                                 Priority
                             </x-local.demo-tasks.sortable>
-                        </x-table.head>
+                        </x-datatable.head>
                     @endif
-                    <x-table.head>{{-- dropdown menu --}}</x-table.head>
-                </x-table.row>
-            </x-table.header>
+                    <x-datatable.head>{{-- dropdown menu --}}</x-datatable.head>
+                </x-datatable.row>
+            </x-datatable.header>
             <x-table.body>
                 @foreach ($tasks as $task)
-                    <x-table.row wire:key="{{ $task->id }}">
+                    <x-datatable.row wire:key="{{ $task->id }}">
                         <x-table.cell>
                             <x-checkbox
                                 wire:model.live="selectedTaskIds"
@@ -151,16 +151,16 @@
                                 </x-dropdown-menu.content>
                             </x-dropdown-menu>
                         </x-table.cell>
-                    </x-table.row>
+                    </x-datatable.row>
                 @endforeach
             </x-table.body>
-        </x-table>
+        </x-datatable>
     </div>
     {{-- Pagination... --}}
     <div class="flex justify-between items-center">
         <div class="text-gray-700 text-sm">
             Results: {{ \Illuminate\Support\Number::format($tasks->total()) }}
         </div>
-        {{ $tasks->links('livewire.demo-tasks.pagination') }}
+        {{ $tasks->links(view: 'livewire.demo-tasks.pagination', data: ['scrollTo' => '#tasks-table']) }}
     </div>
 </div>

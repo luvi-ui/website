@@ -2,16 +2,16 @@
 
 namespace App\Livewire\DemoTasks;
 
-use Illuminate\Support\Arr;
-
 trait CanHideColumns
 {
     public function toggleVisibility($column)
     {
         if (in_array($column, $this->visibleColumns)) {
-            return $this->visibleColumns = array_diff($this->visibleColumns, [$column]);
+            return $this->visibleColumns = array_values(
+                array_diff($this->visibleColumns, [$column])
+            );
         }
-        Arr::push($this->visibleColumns, $column);
+        $this->visibleColumns[] = $column;
     }
 
     public function isVisible($column)
