@@ -48,4 +48,6 @@
 
 <x-local.site-footer />
 
+<x-toaster-hub />
+
 </html>

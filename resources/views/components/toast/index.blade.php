@@ -31,29 +31,21 @@
             @endif
             x-transition:leave-end="opacity-0 scale-90"
             @class([
-                'group pointer-events-auto flex w-full items-center justify-between space-x-2 overflow-hidden rounded-md border p-4 pr-6 shadow-lg',
                 'relative duration-300 transform transition ease-in-out max-w-xs w-full pointer-events-auto',
                 'text-center' => $position->is('center'),
-                'mt-3' => $alignment->is('bottom'),
             ])
-            :class="toast.select({
-                error: 'text-white destructive group border-destructive bg-destructive text-destructive-foreground',
-                info: 'text-black',
-                success: 'text-white',
-                warning: 'text-white'
-            })"
+            :class="toast.select({ error: 'text-white', info: 'text-black', success: 'text-white', warning: 'text-white' })"
             >
-
-            <div class="grid gap-1 {{ $alignment->is('bottom') ? 'mt-3' : 'mb-3' }}">
-                <div x-html="toast.message" />
-            </div>
-
-            {{--
-            <i x-html="toast.message"
-               class="inline-block select-none not-italic px-6 py-3 rounded shadow-lg text-sm w-full {{ $alignment->is('bottom') ? 'mt-3' : 'mb-3' }}"
-               :class="toast.select({ error: 'bg-red-500', info: 'bg-gray-200', success: 'bg-green-600', warning: 'bg-orange-500' })"
+            <i
+                x-text="toast.message"
+                class="inline-block select-none not-italic px-6 py-3 rounded shadow-lg text-sm w-full {{ $alignment->is('bottom') ? 'mt-3' : 'mb-3' }}"
+                :class="toast.select({
+                    error: 'bg-red-500',
+                    info: 'bg-gray-200',
+                    success: 'bg-green-600',
+                    warning: 'bg-orange-500'
+                })"
             ></i>
-            --}}
 
             @if ($closeable)
                 <button
