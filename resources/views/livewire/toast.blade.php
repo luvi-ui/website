@@ -1,44 +1,47 @@
-<div x-data="toast">
+<div x-data="{ showToast1: false, showToast2: false, showToast3: false }">
     <x-button
         variant="outline"
-        @click="openToast"
+        @click="showToast1 = true"
     >
         make toast
     </x-button>
-    <div
-        x-show="open"
-        class="w-96 p-4 rounded h-32 fixed bottom-4 right-4 transform-gpu transition-transform duration-400 ease"
-        x-class="success ? 'bg-green-500' : 'bg-red-500'"
-        x-transition:enter-start="translate-y-full"
-        x-transition:enter-end="translate-y-0"
-        x-transition:leave-start="translate-y-0"
-        x-transition:leave-end="translate-y-full"
+    <x-button
+        variant="outline"
+        @click="showToast2 = true"
     >
-        <p><strong x-text="title"></strong></p>
-        <p
-            class="mt-2 text-sm text-white"
-            x-text="message"
-        ></p>
-    </div>
+        make toast
+    </x-button>
+    <x-button
+        variant="outline"
+        @click="showToast3 = true"
+    >
+        make toast
+    </x-button>
 
+    <template x-teleport="body">
+        <div
+            class="fixed z-50 p-4 w-full flex flex-col gap-4 pointer-events-none sm:p-6 bottom-0 items-end rtl:items-start">
+            <div
+                x-show="showToast1"
+                x-transition.duration-500
+                class="bg-green-500 w-32 p-4 rounded h-16 relative duration-300 transform transition ease-in-out max-w-xs w-full pointer-events-auto"
+            >
+                hi
+            </div>
+            <div
+                x-show="showToast2"
+                x-transition.duration-500
+                class="bg-green-500 w-32 p-4 rounded h-16 relative duration-300 transform transition ease-in-out max-w-xs w-full pointer-events-auto"
+            >
+                hi
+            </div>
+            <div
+                x-show="showToast3"
+                x-transition.duration-500
+                class="bg-green-500 w-32 p-4 rounded h-16 relative duration-300 transform transition ease-in-out max-w-xs w-full pointer-events-auto"
+            >
+                hi
+            </div>
+        </div>
+    </template>
 </div>
-
-@script
-    <script>
-        Alpine.data('toast', () => {
-            return {
-                open: false,
-                title: "Toast Title",
-                message: "Toast message",
-                success: false,
-                openToast() {
-                    console.log('toasty');
-                    this.open = true
-                    setTimeout(() => {
-                        this.open = false
-                    }, 5000)
-                }
-            }
-        })
-    </script>
-@endscript
