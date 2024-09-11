@@ -9,16 +9,27 @@
     <template x-teleport="body">
         <div
             x-data="toast"
-            @notice.window="showToast = true;"
+            @notice.window="add($event.detail)"
             class="fixed z-50 p-4 w-full flex flex-col gap-4 pointer-events-none sm:p-6 bottom-0 items-end rtl:items-start"
         >
-            <div
-                x-show="showToast"
-                x-transition.duration.500ms
-                class="bg-green-500 w-32 p-4 rounded h-16 relative duration-300 transform transition ease-in-out max-w-xs w-full pointer-events-auto"
+            <template
+                x-for="notice of notices"
+                :key="notice.id"
             >
-                hi
-            </div>
+                <div
+                    x-show="visible.includes(notice)"
+                    x-transition:enter="transition ease-in duration-200"
+                    x-transition:enter-start="transform opacity-0 translate-y-2"
+                    x-transition:enter-end="transform opacity-100"
+                    x-transition:leave="transition ease-out duration-500"
+                    x-transition:leave-start="transform translate-x-0 opacity-100"
+                    x-transition:leave-end="transform translate-x-full opacity-0"
+                    @click="remove(notice.id)"
+                    class="bg-green-500 rounded mb-4 mr-6 w-56  h-16 flex items-center justify-center text-white shadow-lg font-bold text-lg cursor-pointer pointer-events-auto"
+                >
+                    hi
+                </div>
+            </template>
         </div>
     </template>
 </div>
