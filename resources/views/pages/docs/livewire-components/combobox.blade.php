@@ -22,7 +22,7 @@
             <x-typography.p>
                 It can be used together with your existing Eloquent Models by default. If you want to use
                 this component without an underlying model, you can adjust this behaviour in
-                <x-typography.inline-code>app/Livewire/UI/Combobox.php</x-typography.inline-code> after you've published
+                <x-typography.inline-code>app/Livewire/Ui/Combobox.php</x-typography.inline-code> after you've published
                 it.
             </x-typography.p>
 

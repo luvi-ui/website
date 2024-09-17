@@ -7002,16 +7002,16 @@
         },
         {
             "name": "luvi-ui/laravel-luvi",
-            "version": "v0.3.4",
+            "version": "v0.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/luvi-ui/laravel-luvi.git",
-                "reference": "8705b4f8c172453f2a7e534cea2d08b5d5c42e12"
+                "reference": "0216043f598cf8b651be67e8e5bad725e95c1dd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/8705b4f8c172453f2a7e534cea2d08b5d5c42e12",
-                "reference": "8705b4f8c172453f2a7e534cea2d08b5d5c42e12",
+                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/0216043f598cf8b651be67e8e5bad725e95c1dd5",
+                "reference": "0216043f598cf8b651be67e8e5bad725e95c1dd5",
                 "shasum": ""
             },
             "require": {
@@ -7063,7 +7063,7 @@
             ],
             "support": {
                 "issues": "https://github.com/luvi-ui/laravel-luvi/issues",
-                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.3.4"
+                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.3.5"
             },
             "funding": [
                 {
@@ -7071,7 +7071,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-09-17T11:50:23+00:00"
+            "time": "2024-09-17T12:24:26+00:00"
         },
         {
             "name": "mockery/mockery",
