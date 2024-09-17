@@ -12,6 +12,16 @@
         ];
     });
 
+    $livewireDirectory = resource_path('views/pages/docs/livewire-components');
+    $livewireComponents = collect(File::files($livewireDirectory))->map(function ($component) {
+        $component = Str::of($component->getFileName())->before('.');
+
+        return (object) [
+            'name' => (string) $component,
+            'label' => (string) $component->replace('-', ' ')->title(),
+        ];
+    });
+
     $current = Str::of(request()->path())->afterLast('/');
 @endphp
 
@@ -77,6 +87,25 @@
                                 wire:navigate
                             >
                                 {{ $component->label }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+            <div>
+                <h4 class="mb-1 rounded-md px-2 py-1 text-sm font-semibold">Livewire Components</h4>
+                <ul class="grid grid-flow-row auto-rows-max text-sm">
+                    @foreach ($livewireComponents as $livewireComponent)
+                        <li @class([
+                            'group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline',
+                            'text-foreground' => $current->value() === $livewireComponent->name,
+                            'text-muted-foreground' => $current->value() !== $livewireComponent->name,
+                        ])>
+                            <a
+                                href="/docs/livewire-components/{{ $livewireComponent->name }}"
+                                wire:navigate
+                            >
+                                {{ $livewireComponent->label }}
                             </a>
                         </li>
                     @endforeach
