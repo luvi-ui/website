@@ -71,3 +71,24 @@ pre code.torchlight .summary-caret {
 .docs .dirty-reset h3 {
     margin-top: 0 !important;
 }
+
+/*   0. IS-OPEN STATE   */
+dialog[open] {
+    translate: 0 0;
+}
+
+/*   1. BEFORE-OPEN STATE   */
+@starting-style {
+    dialog[open] {
+        translate: 0 100vh;
+    }
+}
+
+/*   2. EXIT STATE   */
+dialog {
+    transition:
+        translate 0.7s ease-out,
+        overlay 0.7s ease-out allow-discrete,
+        display 0.7s ease-out allow-discrete;
+    translate: 0 100vh;
+}
