@@ -1,12 +1,6 @@
 <x-dialog>
-    <x-dialog.trigger>
-        <x-button
-            variant="outline"
-            @click="$refs.__dialog.showModal();"
-        >Share</x-button>
-    </x-dialog.trigger>
+    <x-dialog.trigger>Share</x-dialog.trigger>
     <x-dialog.content class="sm:max-w-md">
-
         <div class="grid gap-4">
             <x-dialog.header>
                 <x-dialog.title>Share link</x-dialog.title>
