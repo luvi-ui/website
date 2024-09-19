@@ -72,15 +72,6 @@ pre code.torchlight .summary-caret {
     margin-top: 0 !important;
 }
 
-/*data-[state=open]:animate-in,*/
-/*data-[state=closed]:animate-out,*/
-
-/*data-[state=closed]:fade-out-0,*/
-/*data-[state=open]:fade-in-0,*/
-
-/*data-[state=closed]:zoom-out-95,*/
-/*data-[state=open]:zoom-in-95,*/
-
 /*   0. IS-OPEN STATE   */
 dialog[open] {
     @apply animate-in;
@@ -112,7 +103,8 @@ dialog {
     opacity: 0;
     transition:
         opacity 0.3s,
-        display 0.3s allow-discrete;
+        display 0.3s allow-discrete,
+        overlay 0.3s allow-discrete;
 }
 
 [open]::backdrop {
@@ -123,11 +115,4 @@ dialog {
     [open]::backdrop {
         opacity: 0;
     }
-}
-
-.overlay::backdrop {
-    transition:
-        opacity 0.3s,
-        display 0.3s allow-discrete,
-        overlay 0.3s allow-discrete;
 }
