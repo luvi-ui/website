@@ -7,5 +7,6 @@
         <x-preview name="dialog" />
         <x-installation name="dialog" />
         <x-usage name="dialog" />
+        <x-examples name="dialog" />
     </div>
 </x-layouts.docs>

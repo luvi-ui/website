@@ -1,12 +1,6 @@
 <x-dialog>
     <x-dialog.trigger>
-        <x-button
-            variant="outline"
-            id="dialog-toggle"
-            @click="$refs.__dialog.showModal();"
-        >
-            Edit Profile
-        </x-button>
+        Edit Profile
     </x-dialog.trigger>
     <x-dialog.content class="sm:max-w-[425px]">
         <div class="grid gap-4">
@@ -21,7 +15,7 @@
             <div class="grid gap-4 py-4">
                 <div class="grid grid-cols-4 items-center gap-4">
                     <x-label
-                        htmlfor="name"
+                        htmlFor="name"
                         class="text-right"
                     >
                         Name
@@ -34,7 +28,7 @@
                 </div>
                 <div class="grid grid-cols-4 items-center gap-4">
                     <x-label
-                        htmlfor="username"
+                        htmlFor="username"
                         class="text-right"
                     >
                         Username

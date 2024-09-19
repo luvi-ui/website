@@ -12,5 +12,6 @@
         @click="$refs.__dialog.close()"
     >
         <x-lucide-x class="size-4" />
+        <span class="sr-only">Close</span>
     </button>
 </dialog>
