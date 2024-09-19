@@ -72,25 +72,40 @@ pre code.torchlight .summary-caret {
     margin-top: 0 !important;
 }
 
+/*data-[state=open]:animate-in,*/
+/*data-[state=closed]:animate-out,*/
+
+/*data-[state=closed]:fade-out-0,*/
+/*data-[state=open]:fade-in-0,*/
+
+/*data-[state=closed]:zoom-out-95,*/
+/*data-[state=open]:zoom-in-95,*/
+
 /*   0. IS-OPEN STATE   */
 dialog[open] {
-    translate: 0 0;
+    @apply animate-in;
+    @apply fade-in-0;
+    @apply zoom-in-95;
 }
 
 /*   1. BEFORE-OPEN STATE   */
 @starting-style {
     dialog[open] {
-        translate: 0 100vh;
+        @apply fade-out-0;
+        @apply zoom-out-95;
     }
 }
 
 /*   2. EXIT STATE   */
 dialog {
     transition:
-        translate 0.7s ease-out,
-        overlay 0.7s ease-out allow-discrete,
-        display 0.7s ease-out allow-discrete;
-    translate: 0 100vh;
+        scale 0.2s,
+        overlay 2s allow-discrete,
+        display 0.2s allow-discrete;
+    @apply animate-out;
+    @apply duration-200;
+    @apply fade-out-0;
+    @apply zoom-out-95;
 }
 
 ::backdrop {
