@@ -1,15 +1,15 @@
 <dialog
     x-ref="__dialog"
     {{ $attributes->twMerge('w-full max-w-lg border bg-background p-6 shadow-lg  sm:rounded-lg backdrop:bg-black/80
-                                                [&[open]]:animate-in
-                                                [&[open]]:fade-in-0
-                                                [&[open]]:zoom-in-95
-                                                transition-[translate,opacity,scale,overlay,display]
-                                                [transition-behavior:allow-discrete]
-                                                animate-out
-                                                duration-200
-                                                fade-out-0
-                                                zoom-out-95') }}
+        open:animate-in
+        open:fade-in-0
+        open:zoom-in-95
+        transition-[translate,opacity,scale,overlay,display]
+        [transition-behavior:allow-discrete]
+        animate-out
+        duration-200
+        fade-out-0
+        zoom-out-95') }}
 >
     {{ $slot }}
 
