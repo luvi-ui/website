@@ -1,5 +1,6 @@
 import forms from "@tailwindcss/forms";
 import defaultTheme from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -80,5 +81,11 @@ export default {
         },
     },
 
-    plugins: [forms, require("tailwindcss-animate")],
+    plugins: [
+        forms,
+        require("tailwindcss-animate"),
+        plugin(function ({ addVariant }) {
+            addVariant("starting", "@starting-style");
+        }),
+    ],
 };

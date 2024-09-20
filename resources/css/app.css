@@ -72,33 +72,6 @@ pre code.torchlight .summary-caret {
     margin-top: 0 !important;
 }
 
-/*   0. IS-OPEN STATE   */
-dialog[open] {
-    @apply animate-in;
-    @apply fade-in-0;
-    @apply zoom-in-95;
-}
-
-/*   1. BEFORE-OPEN STATE   */
-@starting-style {
-    dialog[open] {
-        @apply fade-out-0;
-        @apply zoom-out-95;
-    }
-}
-
-/*   2. EXIT STATE   */
-dialog {
-    transition:
-        scale 0.2s,
-        overlay 2s allow-discrete,
-        display 0.2s allow-discrete;
-    @apply animate-out;
-    @apply duration-200;
-    @apply fade-out-0;
-    @apply zoom-out-95;
-}
-
 ::backdrop {
     opacity: 0;
     transition:
