@@ -71,21 +71,3 @@ pre code.torchlight .summary-caret {
 .docs .dirty-reset h3 {
     margin-top: 0 !important;
 }
-
-::backdrop {
-    opacity: 0;
-    transition:
-        opacity 0.3s,
-        display 0.3s allow-discrete,
-        overlay 0.3s allow-discrete;
-}
-
-[open]::backdrop {
-    opacity: 1;
-}
-
-@starting-style {
-    [open]::backdrop {
-        opacity: 0;
-    }
-}
