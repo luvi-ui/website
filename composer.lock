@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8a87931dbe239845e53ed3131d95ea4",
+    "content-hash": "41c08fed516516f1c763225780f839e3",
     "packages": [
         {
             "name": "blade-ui-kit/blade-icons",
@@ -7002,16 +7002,16 @@
         },
         {
             "name": "luvi-ui/laravel-luvi",
-            "version": "v0.3.6",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/luvi-ui/laravel-luvi.git",
-                "reference": "7dae06fee08dfc0d6d2a4b426d3652cce1ce9166"
+                "reference": "b91c4fad11801fc40b09292c618ea736ba9cdedf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/7dae06fee08dfc0d6d2a4b426d3652cce1ce9166",
-                "reference": "7dae06fee08dfc0d6d2a4b426d3652cce1ce9166",
+                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/b91c4fad11801fc40b09292c618ea736ba9cdedf",
+                "reference": "b91c4fad11801fc40b09292c618ea736ba9cdedf",
                 "shasum": ""
             },
             "require": {
@@ -7063,7 +7063,7 @@
             ],
             "support": {
                 "issues": "https://github.com/luvi-ui/laravel-luvi/issues",
-                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.3.6"
+                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.4.0"
             },
             "funding": [
                 {
@@ -7071,7 +7071,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-09-17T12:40:06+00:00"
+            "time": "2024-09-23T12:05:23+00:00"
         },
         {
             "name": "mockery/mockery",
