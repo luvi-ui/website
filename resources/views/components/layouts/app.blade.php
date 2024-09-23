@@ -50,4 +50,18 @@
 
 <x-toaster-hub />
 
+<div
+    id="toast"
+    popover=manual
+    class="block absolute bottom-0 left-auto right-0 top-auto"
+>
+    <div>Popover content2</div>
+    <div>Popover content2</div>
+    <div>Popover content2</div>
+    <div>Popover content2</div>
+    <div>Popover content2</div>
+    <div>Popover content2</div>
+    <div>Popover content2</div>
+</div>
+
 </html>
