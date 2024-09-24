@@ -4,6 +4,6 @@
     <x-button wire:click="fireToast">
         clickidy
     </x-button>
-    <x-toast />
 
+    <x-toast />
 </div>
