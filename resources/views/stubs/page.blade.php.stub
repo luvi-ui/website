@@ -1,0 +1,12 @@
+<x-layouts.docs>
+    <div>
+        <x-docs.component-info
+            name="{{ $ucfComponent }}"
+            description="Description"
+        />
+        <x-preview name="{{ $component }}" />
+        <x-installation name="{{ $component }}" />
+        <x-usage name="{{ $component }}" />
+        {{-- <x-examples name="{{ $component }}" /> --}}
+    </div>
+</x-layouts.docs>
