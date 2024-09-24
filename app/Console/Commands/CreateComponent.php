@@ -12,7 +12,7 @@ class CreateComponent extends Command
      *
      * @var string
      */
-    protected $signature = 'luvi:make:component {name}';
+    protected $signature = 'luvi:make {name}';
 
     /**
      * The console command description.
