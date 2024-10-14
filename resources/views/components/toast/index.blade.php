@@ -30,24 +30,31 @@
         init() {
             this.showToasts({{ json_encode(session()->get('toasts', [])) }});
         },
+
         showToast(toast) {
-            console.log(toast);
             if (typeof toast.slots.action === 'string') {
                 toast.slots.action = $wire[toast.slots.action];
             }
             this.toasts.push(toast);
         },
+
+        removeToastfromDOM({ animationName }) {
+            if (animationName === 'exit') this.$el.parentElement.remove();
+        },
+
         showToasts(toasts) {
             toasts.forEach(toast => this.showToast(toast))
         },
     }"
+    x-id="['toast']"
     x-on:toast-show.document="showToast(event.detail)"
 >
     <template x-for="toast in toasts">
         <div>
             <div
                 class="{{ $styles }}"
-                x-on:click="$el.classList.add('animate-out', 'slide-out-to-bottom', 'fill-mode-forwards', 'fade-out')"
+                x-on:click="$el.classList.add('animate-out', 'slide-out-to-bottom', 'fill-mode-forwards', 'fade-out');"
+                x-on:animationend="removeToastfromDOM($event)"
             >
                 <div class="grid gap-1">
                     <div
