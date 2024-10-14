@@ -1,5 +1,6 @@
 @php
     $styles = implode(' ', [
+        'bg-white',
         'duration-1000',
         'group',
         'pointer-events-auto',
@@ -44,7 +45,7 @@
                 const toastEl = this.$el.querySelector(`#${toast.id}`);
                 console.log(toastEl);
                 toastEl.classList.add('animate-out', 'slide-out-to-bottom', 'fill-mode-forwards', 'fade-out');
-            }, toast.duration);
+            }, toast.duration || 1000);
         },
 
         removeToast({ animationName }, toast) {
