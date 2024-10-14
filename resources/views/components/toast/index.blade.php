@@ -1,5 +1,6 @@
 @php
     $styles = implode(' ', [
+        'duration-1000',
         'group',
         'pointer-events-auto',
         'relative',
@@ -21,9 +22,9 @@
 @endphp
 
 <dialog
-    id="toast"
     popover=manual
     class="bottom-0 left-auto right-0 top-auto w-full max-w-[420px] p-4 space-y-4 overflow-hidden"
+    :class="{ 'p-4': toasts.length > 0 }"
     open
     x-data="{
         toasts: [],
@@ -35,26 +36,38 @@
             if (typeof toast.slots.action === 'string') {
                 toast.slots.action = $wire[toast.slots.action];
             }
+
+            toast.id = `toast-${window.getObjectId(toast)}`;
             this.toasts.push(toast);
+
+            toast.timerId = setTimeout(async () => {
+                const toastEl = this.$el.querySelector(`#${toast.id}`);
+                console.log(toastEl);
+                toastEl.classList.add('animate-out', 'slide-out-to-bottom', 'fill-mode-forwards', 'fade-out');
+            }, toast.duration);
         },
 
-        removeToastfromDOM({ animationName }) {
-            if (animationName === 'exit') this.$el.parentElement.remove();
+        removeToast({ animationName }, toast) {
+            if (animationName === 'exit') {
+                this.toasts.splice(this.toasts.indexOf(toast), 1);
+            }
         },
 
         showToasts(toasts) {
             toasts.forEach(toast => this.showToast(toast))
         },
     }"
-    x-id="['toast']"
     x-on:toast-show.document="showToast(event.detail)"
 >
-    <template x-for="toast in toasts">
+    <template
+        x-for="toast in toasts"
+        :key="toast.id"
+    >
         <div>
             <div
+                :id="toast.id"
                 class="{{ $styles }}"
-                x-on:click="$el.classList.add('animate-out', 'slide-out-to-bottom', 'fill-mode-forwards', 'fade-out');"
-                x-on:animationend="removeToastfromDOM($event)"
+                x-on:animationend="removeToast($event, toast)"
             >
                 <div class="grid gap-1">
                     <div
