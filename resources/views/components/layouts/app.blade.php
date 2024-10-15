@@ -44,8 +44,8 @@
         {{ $slot }}
     </div>
     @livewireScripts
-</body>
 
-<x-local.site-footer />
+    <x-local.site-footer />
+</body>
 
 </html>

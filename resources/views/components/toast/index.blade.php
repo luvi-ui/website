@@ -67,11 +67,11 @@
             <div
                 :id="toast.id"
                 class="{{ $styles }}"
-                x-on:animationend="removeToast($event, toast)"
                 role="status"
                 aria-live="off"
                 aria-atomic="true"
                 tabindex="0"
+                x-on:animationend="removeToast($event, toast)"
             >
                 <div class="grid gap-1">
                     <div
