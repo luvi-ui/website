@@ -2,7 +2,7 @@
     <div>
         <x-docs.component-info
             name="Toast"
-            description="Description"
+            description="A succinct message that is displayed temporarily."
         />
         <x-preview name="toast" />
         <x-installation name="toast" />
