@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Services\AlertCvaService;
 use App\Services\BadgeCvaService;
 use App\Services\ButtonCvaService;
 use App\Services\SheetCvaService;
+use App\Services\ToastCvaService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(AlertCvaService::class, fn () => AlertCvaService::new());
+        $this->app->singleton(ToastCvaService::class, fn () => ToastCvaService::new());
         $this->app->singleton(BadgeCvaService::class, fn () => BadgeCvaService::new());
         $this->app->singleton(ButtonCvaService::class, fn () => ButtonCvaService::new());
         $this->app->singleton(SheetCvaService::class, fn () => SheetCvaService::new());

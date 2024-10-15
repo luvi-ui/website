@@ -1,26 +1,8 @@
-@php
-    $styles = implode(' ', [
-        'bg-white',
-        'duration-500',
-        'group',
-        'pointer-events-auto',
-        'relative',
-        'flex',
-        'w-full',
-        'items-center',
-        'justify-between',
-        'space-x-2',
-        'overflow-hidden',
-        'rounded-md',
-        'border',
-        'p-4',
-        'pr-6',
-        'shadow-lg',
-        'animate-in',
-        'slide-in-from-bottom',
-    ]);
+@props([
+    'variant' => null,
+])
 
-@endphp
+@inject('toast', 'App\Services\ToastCvaService')
 
 <dialog
     popover=manual
@@ -43,7 +25,7 @@
 
             toast.timerId = setTimeout(async () => {
                 const toastEl = this.$el.querySelector(`#${toast.id}`);
-                toastEl.classList.add('animate-out', 'slide-out-to-right', 'fade-out');
+                toastEl.setAttribute('data-state', 'closed');
             }, toast.duration || 3000);
         },
 
@@ -65,13 +47,14 @@
     >
         <div>
             <div
+                data-state="open"
                 :id="toast.id"
-                class="{{ $styles }}"
                 role="status"
                 aria-live="off"
                 aria-atomic="true"
                 tabindex="0"
                 x-on:animationend="removeToast($event, toast)"
+                {{ $attributes->twMerge($toast(['variant' => $variant])) }}
             >
                 <div class="grid gap-1">
                     <template x-if="toast.slots.title">
