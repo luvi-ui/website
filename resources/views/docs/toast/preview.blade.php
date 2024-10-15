@@ -4,5 +4,3 @@
 >
     Add to calendar
 </x-button>
-
-<x-toast />

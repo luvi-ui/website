@@ -7,6 +7,6 @@
         <x-preview name="toast" />
         <x-installation name="toast" />
         <x-usage name="toast" />
-        {{-- <x-examples name="toast" /> --}}
+        <x-examples name="toast" />
     </div>
 </x-layouts.docs>

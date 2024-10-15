@@ -74,20 +74,26 @@
                 x-on:animationend="removeToast($event, toast)"
             >
                 <div class="grid gap-1">
+                    <template x-if="toast.slots.title">
+                        <div
+                            class="text-sm font-semibold [&+div]:text-xs"
+                            x-text="toast.slots.title"
+                        ></div>
+                    </template>
                     <div
-                        class="text-sm font-semibold"
-                        x-text="toast.slots.title"
-                    ></div>
-                    <div
-                        class="text-xs opacity-90"
+                        class="text-sm opacity-90"
                         x-text="toast.slots.description"
                     ></div>
                 </div>
 
-                <x-button
-                    x-on:click="toast.slots.action"
-                    variant="outline"
-                >Action</x-button>
+                <template x-if="Object.keys(toast.slots).includes('action')">
+                    <x-button
+                        x-on:click="toast.slots.action"
+                        variant="outline"
+                        x-text="toast.slots.actionText || 'Action'"
+                    >
+                    </x-button>
+                </template>
 
             </div>
         </div>
