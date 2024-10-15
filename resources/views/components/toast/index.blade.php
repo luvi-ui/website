@@ -1,8 +1,28 @@
-@props([
-    'variant' => null,
-])
-
-@inject('toast', 'App\Services\ToastCvaService')
+@php
+    $styles = implode(' ', [
+        'group',
+        'pointer-events-auto',
+        'relative',
+        'flex',
+        'w-full',
+        'items-center',
+        'justify-between',
+        'space-x-2',
+        'overflow-hidden',
+        'rounded-md',
+        'border',
+        'p-4',
+        'pr-6',
+        'shadow-lg',
+        'transition-all',
+        'data-[state=open]:animate-in',
+        'data-[state=closed]:animate-out',
+        'data-[state=closed]:fade-out',
+        'data-[state=closed]:slide-out-to-right-full',
+        'data-[state=open]:slide-in-from-top-full',
+        'data-[state=open]:sm:slide-in-from-bottom-full',
+    ]);
+@endphp
 
 <dialog
     popover=manual
@@ -54,7 +74,10 @@
                 aria-atomic="true"
                 tabindex="0"
                 x-on:animationend="removeToast($event, toast)"
-                {{ $attributes->twMerge($toast(['variant' => $variant])) }}
+                class="{{ $styles }}"
+                :class="toast.variant === 'destructive' ?
+                    'destructive group border-destructive bg-destructive text-destructive-foreground' :
+                    'border bg-background text-foreground'"
             >
                 <div class="grid gap-1">
                     <template x-if="toast.slots.title">
@@ -71,6 +94,7 @@
 
                 <template x-if="Object.keys(toast.slots).includes('action')">
                     <x-button
+                        class="bg-transparent hover:bg-secondary group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive"
                         x-on:click="toast.slots.action"
                         variant="outline"
                         x-text="toast.slots.actionText || 'Action'"
