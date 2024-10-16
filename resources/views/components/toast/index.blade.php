@@ -26,9 +26,15 @@
 
 <dialog
     popover=manual
+    open
     class="bottom-0 left-auto right-0 top-auto w-full max-w-[420px] p-4 space-y-4 overflow-hidden"
     :class="{ 'p-4': toasts.length > 0 }"
-    open
+    x-on:toast-show.document="showToast(event.detail)"
+    x-on:mouseenter="pauseAllTimers()"
+    x-on:mouseleave="resumeAllTimers()"
+    x-on:focusin="pauseAllTimers()"
+    x-on:focusout="resumeAllTimers()"
+    x-on:keyup.escape="resumeAllTimers()"
     x-data="{
         toasts: [],
         timer: null,
@@ -68,7 +74,7 @@
             toast.timer = new this.Timer(() => {
                 const toastEl = this.$el.querySelector(`#${toast.id}`);
                 toastEl.setAttribute('data-state', 'closed');
-            }, 3000);
+            }, toast.duration || 3000);
 
             this.toasts.push(toast);
 
@@ -92,9 +98,6 @@
             this.toasts.forEach(toast => toast.timer.resume());
         },
     }"
-    x-on:toast-show.document="showToast(event.detail)"
-    x-on:mouseenter="pauseAllTimers()"
-    x-on:mouseleave="resumeAllTimers()"
 >
     <template
         x-for="toast in toasts"
