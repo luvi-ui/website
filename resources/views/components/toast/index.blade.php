@@ -64,12 +64,14 @@
             }
 
             toast.id = `toast-${window.getObjectId(toast)}`;
-            this.toasts.push(toast);
 
-            this.timer = new this.Timer(() => {
+            toast.timer = new this.Timer(() => {
                 const toastEl = this.$el.querySelector(`#${toast.id}`);
                 toastEl.setAttribute('data-state', 'closed');
             }, 3000);
+
+            this.toasts.push(toast);
+
         },
 
         removeToast({ animationName }, toast) {
@@ -81,17 +83,24 @@
         showToasts(toasts) {
             toasts.forEach(toast => this.showToast(toast))
         },
+
+        pauseAllTimers() {
+            this.toasts.forEach(toast => toast.timer.pause());
+        },
+
+        resumeAllTimers() {
+            this.toasts.forEach(toast => toast.timer.resume());
+        },
     }"
     x-on:toast-show.document="showToast(event.detail)"
+    x-on:mouseenter="pauseAllTimers()"
+    x-on:mouseleave="resumeAllTimers()"
 >
     <template
         x-for="toast in toasts"
         :key="toast.id"
     >
-        <div
-            x-on:mouseenter="timer.pause()"
-            x-on:mouseleave="timer.resume()"
-        >
+        <div>
             <div
                 data-state="open"
                 :id="toast.id"
