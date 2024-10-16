@@ -31,8 +31,31 @@
     open
     x-data="{
         toasts: [],
+        timer: null,
         init() {
             this.showToasts({{ json_encode(session()->get('toasts', [])) }});
+        },
+
+        Timer: function(callback, delay) {
+            var timerId, start, remaining = delay;
+
+            this.pause = function() {
+                window.clearTimeout(timerId);
+                timerId = null;
+                remaining -= Date.now() - start;
+            };
+
+            this.resume = function() {
+                if (timerId) {
+                    return;
+                }
+
+                start = Date.now();
+                timerId = window.setTimeout(callback, remaining);
+            };
+
+            this.resume();
+
         },
 
         showToast(toast) {
@@ -43,10 +66,10 @@
             toast.id = `toast-${window.getObjectId(toast)}`;
             this.toasts.push(toast);
 
-            toast.timerId = setTimeout(async () => {
+            this.timer = new this.Timer(() => {
                 const toastEl = this.$el.querySelector(`#${toast.id}`);
                 toastEl.setAttribute('data-state', 'closed');
-            }, toast.duration || 3000);
+            }, 3000);
         },
 
         removeToast({ animationName }, toast) {
@@ -65,7 +88,10 @@
         x-for="toast in toasts"
         :key="toast.id"
     >
-        <div>
+        <div
+            x-on:mouseenter="timer.pause()"
+            x-on:mouseleave="timer.resume()"
+        >
             <div
                 data-state="open"
                 :id="toast.id"
