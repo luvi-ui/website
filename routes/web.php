@@ -6,6 +6,7 @@ use App\Livewire\DemoForms\AppearanceForm;
 use App\Livewire\DemoForms\NotificationsForm;
 use App\Livewire\DemoForms\ProfileForm;
 use App\Livewire\DemoMail\Mail;
+use App\Livewire\Playground;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,7 @@ Route::get('/examples/forms/appearance', AppearanceForm::class);
 Route::get('/examples/forms/notifications', NotificationsForm::class);
 
 Route::get('/examples/mail/{inbox}/{mail:id?}', Mail::class)->name('inbox');
+
+if (app()->isLocal()) {
+    Route::get('/playground', Playground::class);
+}
