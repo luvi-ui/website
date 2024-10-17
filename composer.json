@@ -10,7 +10,6 @@
     "require": {
         "php": "^8.1",
         "calebporzio/sushi": "^2.5",
-        "feature-ninja/cva": "^0.2.0",
         "gehrisandro/tailwind-merge-laravel": "^1.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/folio": "^1.1",
