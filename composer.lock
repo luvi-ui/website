@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c891a06db44a6ae0b4c7d072b7f4978",
+    "content-hash": "a24ec4dff21accf100b5241ed7d6c345",
     "packages": [
         {
             "name": "blade-ui-kit/blade-icons",
@@ -644,6 +644,69 @@
                 }
             ],
             "time": "2023-10-06T06:47:41+00:00"
+        },
+        {
+            "name": "feature-ninja/cva",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/feature-ninja/cva.git",
+                "reference": "13de0f3a4a7ef4775894e02b3f0a817bab81210d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/feature-ninja/cva/zipball/13de0f3a4a7ef4775894e02b3f0a817bab81210d",
+                "reference": "13de0f3a4a7ef4775894e02b3f0a817bab81210d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.21.1",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "FeatureNinja\\Cva\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roj Vroemen",
+                    "email": "roj@feature.ninja",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Class variance authority implementation in php",
+            "homepage": "https://github.com/feature-ninja/cva",
+            "keywords": [
+                "authority",
+                "class",
+                "cva",
+                "feature-ninja",
+                "variance"
+            ],
+            "support": {
+                "issues": "https://github.com/feature-ninja/cva/issues",
+                "source": "https://github.com/feature-ninja/cva/tree/0.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/feature-ninja",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-09-25T12:10:01+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -2317,6 +2380,79 @@
             "time": "2024-10-15T19:35:06+00:00"
         },
         {
+            "name": "luvi-ui/laravel-luvi",
+            "version": "v0.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luvi-ui/laravel-luvi.git",
+                "reference": "89c873bbc28138960d86bb048df107332e9cfedb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/89c873bbc28138960d86bb048df107332e9cfedb",
+                "reference": "89c873bbc28138960d86bb048df107332e9cfedb",
+                "shasum": ""
+            },
+            "require": {
+                "feature-ninja/cva": "^0.3.0",
+                "gehrisandro/tailwind-merge-laravel": "^1.2",
+                "illuminate/contracts": "^10.0||^11.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.9",
+                "laravel/pint": "^1.14",
+                "nunomaduro/collision": "^8.1.1||^7.10.0",
+                "orchestra/testbench": "^9.0.0||^8.22.0",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-arch": "^2.7",
+                "pestphp/pest-plugin-laravel": "^2.3",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LuviUI\\LaravelLuvi\\LaravelLuviServiceProvider"
+                    ],
+                    "aliases": {
+                        "LaravelLuvi": "LuviUI\\LaravelLuvi\\Facades\\LaravelLuvi"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LuviUI\\LaravelLuvi\\": "src/",
+                    "LuviUI\\LaravelLuvi\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Re-usable components for Laravel",
+            "homepage": "https://github.com/luvi-ui/laravel-luvi",
+            "keywords": [
+                "laravel",
+                "laravel-luvi",
+                "luvi-ui"
+            ],
+            "support": {
+                "issues": "https://github.com/luvi-ui/laravel-luvi/issues",
+                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.4.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/suenerds",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-10-17T08:00:56+00:00"
+        },
+        {
             "name": "mallardduck/blade-lucide-icons",
             "version": "1.23.0",
             "source": {
@@ -3736,6 +3872,66 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.16.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "c7413972cf22ffdff97b68499c22baa04eddb6a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/c7413972cf22ffdff97b68499c22baa04eddb6a2",
+                "reference": "c7413972cf22ffdff97b68499c22baa04eddb6a2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.28|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5",
+                "orchestra/testbench": "^7.7|^8.0",
+                "pestphp/pest": "^1.22",
+                "phpunit/phpunit": "^9.5.24",
+                "spatie/pest-plugin-test-time": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.5"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-08-27T18:56:10+00:00"
         },
         {
             "name": "spatie/once",
@@ -6498,69 +6694,6 @@
             "time": "2024-01-02T13:46:09+00:00"
         },
         {
-            "name": "feature-ninja/cva",
-            "version": "0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/feature-ninja/cva.git",
-                "reference": "13de0f3a4a7ef4775894e02b3f0a817bab81210d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/feature-ninja/cva/zipball/13de0f3a4a7ef4775894e02b3f0a817bab81210d",
-                "reference": "13de0f3a4a7ef4775894e02b3f0a817bab81210d",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.2"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.21.1",
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^10.3.2"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "FeatureNinja\\Cva\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roj Vroemen",
-                    "email": "roj@feature.ninja",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Class variance authority implementation in php",
-            "homepage": "https://github.com/feature-ninja/cva",
-            "keywords": [
-                "authority",
-                "class",
-                "cva",
-                "feature-ninja",
-                "variance"
-            ],
-            "support": {
-                "issues": "https://github.com/feature-ninja/cva/issues",
-                "source": "https://github.com/feature-ninja/cva/tree/0.3.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/feature-ninja",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-09-25T12:10:01+00:00"
-        },
-        {
             "name": "fidry/cpu-core-counter",
             "version": "1.2.0",
             "source": {
@@ -6930,79 +7063,6 @@
                 "source": "https://github.com/laravel/sail"
             },
             "time": "2024-10-10T13:26:02+00:00"
-        },
-        {
-            "name": "luvi-ui/laravel-luvi",
-            "version": "v0.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/luvi-ui/laravel-luvi.git",
-                "reference": "89c873bbc28138960d86bb048df107332e9cfedb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/89c873bbc28138960d86bb048df107332e9cfedb",
-                "reference": "89c873bbc28138960d86bb048df107332e9cfedb",
-                "shasum": ""
-            },
-            "require": {
-                "feature-ninja/cva": "^0.3.0",
-                "gehrisandro/tailwind-merge-laravel": "^1.2",
-                "illuminate/contracts": "^10.0||^11.0",
-                "php": "^8.2",
-                "spatie/laravel-package-tools": "^1.16"
-            },
-            "require-dev": {
-                "larastan/larastan": "^2.9",
-                "laravel/pint": "^1.14",
-                "nunomaduro/collision": "^8.1.1||^7.10.0",
-                "orchestra/testbench": "^9.0.0||^8.22.0",
-                "pestphp/pest": "^2.34",
-                "pestphp/pest-plugin-arch": "^2.7",
-                "pestphp/pest-plugin-laravel": "^2.3",
-                "phpstan/extension-installer": "^1.3",
-                "phpstan/phpstan-deprecation-rules": "^1.1",
-                "phpstan/phpstan-phpunit": "^1.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LuviUI\\LaravelLuvi\\LaravelLuviServiceProvider"
-                    ],
-                    "aliases": {
-                        "LaravelLuvi": "LuviUI\\LaravelLuvi\\Facades\\LaravelLuvi"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "LuviUI\\LaravelLuvi\\": "src/",
-                    "LuviUI\\LaravelLuvi\\Database\\Factories\\": "database/factories/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Re-usable components for Laravel",
-            "homepage": "https://github.com/luvi-ui/laravel-luvi",
-            "keywords": [
-                "laravel",
-                "laravel-luvi",
-                "luvi-ui"
-            ],
-            "support": {
-                "issues": "https://github.com/luvi-ui/laravel-luvi/issues",
-                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.4.2"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/suenerds",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-10-17T08:00:56+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -9624,66 +9684,6 @@
                 }
             ],
             "time": "2024-06-12T15:01:18+00:00"
-        },
-        {
-            "name": "spatie/laravel-package-tools",
-            "version": "1.16.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "c7413972cf22ffdff97b68499c22baa04eddb6a2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/c7413972cf22ffdff97b68499c22baa04eddb6a2",
-                "reference": "c7413972cf22ffdff97b68499c22baa04eddb6a2",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^9.28|^10.0|^11.0",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.5",
-                "orchestra/testbench": "^7.7|^8.0",
-                "pestphp/pest": "^1.22",
-                "phpunit/phpunit": "^9.5.24",
-                "spatie/pest-plugin-test-time": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\LaravelPackageTools\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Tools for creating Laravel packages",
-            "homepage": "https://github.com/spatie/laravel-package-tools",
-            "keywords": [
-                "laravel-package-tools",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.5"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-08-27T18:56:10+00:00"
         },
         {
             "name": "symfony/yaml",
