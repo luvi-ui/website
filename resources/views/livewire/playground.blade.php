@@ -1,17 +1,6 @@
 <div>
 
-    @if ($errors->any())
-        <div>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     <x-form wire:submit.prevent="save">
-
         <x-form.item>
             <x-form.label>Username</x-form.label>
             <x-input
@@ -44,7 +33,7 @@
             <x-form.message />
         </x-form.item>
 
-        <x-form.item name="form.bio">
+        <x-form.item>
             <x-form.label>Bio</x-form.label>
             <x-textarea
                 wire:model="bio"
@@ -59,12 +48,27 @@
             <x-form.message />
         </x-form.item>
 
-        <x-new-input
+        <x-form.input
             label="Testing"
             wire:model="form.test"
             placeholder="testing"
             description-trailing="This is your public display name. It can be your real name or a pseudonym. You can only change this once every 30 days."
         />
+
+        <x-form.item>
+            <x-form.label>Test 2</x-form.label>
+            <x-input
+                x-form:control
+                wire:model="form.test"
+                placeholder="testing"
+                description-trailing="This is your public display name. It can be your real name or a pseudonym. You can only change this once every 30 days."
+            />
+            <x-form.description>
+                This is your public display name. It can be your real name or a
+                pseudonym. You can only change this once every 30 days.
+            </x-form.description>
+            <x-form.message name="form.test" />
+        </x-form.item>
 
         <x-button type="submit">Update profile</x-button>
     </x-form>
