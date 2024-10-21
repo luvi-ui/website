@@ -21,5 +21,7 @@
         </x-form.description>
     @endif
 
-    <x-form.message name="{{ $attributes->get('wire:model') }}" />
+    <x-form.message
+        name="{{ $attributes->get('wire:model') ? $attributes->get('wire:model') : $attributes->get('name') }}"
+    />
 </x-form.item>

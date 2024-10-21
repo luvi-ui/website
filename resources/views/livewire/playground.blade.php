@@ -59,7 +59,6 @@
             <x-form.message />
         </x-form.item>
 
-
         <x-new-input
             label="Testing"
             wire:model="form.test"
