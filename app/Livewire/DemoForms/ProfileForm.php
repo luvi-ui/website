@@ -30,7 +30,7 @@ class ProfileForm extends Component
             <div>
                 <x-form>
                     <x-form.input
-                        name="display"
+                        wire:model="display"
                         placeholder="shadcn"
                         description-trailing="This is your public display name. It can be your real name or a pseudonym. You can only change this once every 30 days."
                     />
