@@ -13,6 +13,7 @@
         <x-form.label>Username (Longhand)</x-form.label>
         <x-input
             x-form:control
+            name="username"
             placeholder="shadcn"
         />
         <x-form.description>
