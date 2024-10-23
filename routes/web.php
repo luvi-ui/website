@@ -7,6 +7,7 @@ use App\Livewire\DemoForms\NotificationsForm;
 use App\Livewire\DemoForms\ProfileForm;
 use App\Livewire\DemoMail\Mail;
 use App\Livewire\Playground;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,4 +40,12 @@ Route::get('/examples/mail/{inbox}/{mail:id?}', Mail::class)->name('inbox');
 
 if (app()->isLocal()) {
     Route::get('/playground', Playground::class);
+
+    Route::post('/playground', function (Request $request) {
+        $request->validate([
+            'test' => 'required|string|min:8',
+        ]);
+
+        return 'Request was validated!';
+    });
 }
