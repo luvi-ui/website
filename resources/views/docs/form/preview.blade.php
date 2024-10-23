@@ -1,17 +1,9 @@
 <x-form>
-    <x-form.item>
-        <x-form.label>Username</x-form.label>
-        <x-input
-            x-form:control
-            placeholder="shadcn"
-        />
-        <x-form.description>
-            This is your public display name. It can be your real name or a
-            pseudonym. You can only change this once every 30 days.
-        </x-form.description>
-        <x-form.message />
-    </x-form.item>
-
+    <x-form.input
+        name="display"
+        placeholder="shadcn"
+        description-trailing="This is your public display name. It can be your real name or a pseudonym. You can only change this once every 30 days."
+    />
 
     <x-form.item>
         <x-form.label>Email</x-form.label>

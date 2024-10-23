@@ -1,5 +1,4 @@
 @aware(['name'])
-
 @props([
     'name' => '',
 ])
