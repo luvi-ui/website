@@ -2381,16 +2381,16 @@
         },
         {
             "name": "luvi-ui/laravel-luvi",
-            "version": "v0.4.3",
+            "version": "v0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/luvi-ui/laravel-luvi.git",
-                "reference": "0a4d7ba50355b7a7952abb44ba11d1a9b4598693"
+                "reference": "52fbc54412c5b8c865c979e3226e662f16caa173"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/0a4d7ba50355b7a7952abb44ba11d1a9b4598693",
-                "reference": "0a4d7ba50355b7a7952abb44ba11d1a9b4598693",
+                "url": "https://api.github.com/repos/luvi-ui/laravel-luvi/zipball/52fbc54412c5b8c865c979e3226e662f16caa173",
+                "reference": "52fbc54412c5b8c865c979e3226e662f16caa173",
                 "shasum": ""
             },
             "require": {
@@ -2442,7 +2442,7 @@
             ],
             "support": {
                 "issues": "https://github.com/luvi-ui/laravel-luvi/issues",
-                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.4.3"
+                "source": "https://github.com/luvi-ui/laravel-luvi/tree/v0.4.4"
             },
             "funding": [
                 {
@@ -2450,7 +2450,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-23T11:33:14+00:00"
+            "time": "2024-10-28T09:13:55+00:00"
         },
         {
             "name": "mallardduck/blade-lucide-icons",
