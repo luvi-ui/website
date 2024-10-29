@@ -1,3 +1,3 @@
-<div @click="open = ! open">
+<div x-on:click="$refs.dialog.showModal()">
     {{ $slot }}
 </div>

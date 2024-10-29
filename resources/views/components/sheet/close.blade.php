@@ -1,5 +1,5 @@
 <x-button
-    @click="open = false"
+    x-on:click="$refs.dialog.close()"
     {{ $attributes->twMerge('') }}
 >
     {{ $slot }}
