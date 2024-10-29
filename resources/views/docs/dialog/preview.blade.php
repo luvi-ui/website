@@ -41,7 +41,7 @@
                 </div>
             </div>
             <x-dialog.footer>
-                <x-button type="submit">Save changes</x-button>
+                <x-dialog.close variant="default">Save changes</x-dialog.close>
             </x-dialog.footer>
         </div>
     </x-dialog.content>
