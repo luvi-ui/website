@@ -5,6 +5,7 @@
 @inject('sheet', 'App\Services\DialogCvaService')
 
 <dialog
+    wire:ignore.self
     x-on:cancel="__sheetOpen = false"
     x-trap.noscroll="__sheetOpen"
     x-effect="__sheetOpen ? $el.showModal() : $el.close()"
