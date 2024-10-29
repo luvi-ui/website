@@ -5,7 +5,7 @@
 @inject('sheet', 'App\Services\SheetCvaService')
 
 <dialog
-    x-ref="dialog"
+    x-ref="__sheet"
     x-trap.noscroll="sheetOpen"
     {{ $attributes->twMerge($sheet(['side' => $side, 'variant' => 'sheet'])) }}
 >

@@ -1,5 +1,5 @@
 <x-button
-    x-on:click="sheetOpen = false; $refs.dialog.close()"
+    x-on:click="sheetOpen = false; $refs.__sheet.close()"
     {{ $attributes->twMerge('') }}
 >
     {{ $slot }}
