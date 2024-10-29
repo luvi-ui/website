@@ -6,6 +6,7 @@
 
 <dialog
     x-ref="dialog"
+    x-trap.noscroll="sheetOpen"
     {{ $attributes->twMerge($sheet(['side' => $side, 'variant' => 'sheet'])) }}
 >
     <x-sheet.close
