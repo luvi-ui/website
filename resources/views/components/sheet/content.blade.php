@@ -5,8 +5,9 @@
 @inject('sheet', 'App\Services\DialogCvaService')
 
 <dialog
-    x-ref="__sheet"
+    x-on:cancel="sheetOpen = false"
     x-trap.noscroll="sheetOpen"
+    x-effect="sheetOpen ? $el.showModal() : $el.close()"
     {{ $attributes->twMerge($sheet(['side' => $side, 'variant' => 'sheet'])) }}
 >
     <x-sheet.close
