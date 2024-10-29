@@ -16,7 +16,7 @@ class SheetCvaService
                 'variants' => [
                     'variant' => [
                         'dialog' => 'w-full max-w-lg border bg-background p-6 shadow-lg  sm:rounded-lg',
-                        'sheet' => 'fixed m-0 gap-4 bg-background p-6 shadow-lg transition-[display,overlay,transform] ease-in-out duration-500 [transition-behavior:allow-discrete] ',
+                        'sheet' => 'open:grid grid-rows-[auto_1fr_auto]  m-0 gap-4 bg-background p-6 shadow-lg transition-[display,overlay,transform] ease-in-out duration-500 [transition-behavior:allow-discrete] ',
                     ],
                     'side' => [
                         'top' => 'max-w-full min-w-full overflow-x-auto !mb-auto border-b -translate-y-full open:translate-y-0 [@starting-style]:open:-translate-y-full',
