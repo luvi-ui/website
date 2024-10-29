@@ -1,3 +1,3 @@
-<div x-on:click="sheetOpen = true">
+<div x-on:click="__sheetOpen = true">
     {{ $slot }}
 </div>
