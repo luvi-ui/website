@@ -4,7 +4,7 @@
             name="Dialog"
             description="A window overlaid on either the primary window or another dialog window, rendering the content underneath inert."
         />
-        <x-typography.p>Quick Note on browser compatibility.</x-typography.p>
+        <x-typography.p>Quick note on browser compatibility.</x-typography.p>
         <x-typography.p>This component makes use of two modern CSS features:
             <x-typography.list>
                 <li>
