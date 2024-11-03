@@ -1,8 +1,11 @@
-<x-popover>
-    <x-popover.trigger aschild>
-        <x-button variant="outline">Open popover</x-button>
+<x-popover x-model="open">
+    <x-popover.trigger variant="outline">
+        Open popover
     </x-popover.trigger>
-    <x-popover.content class="w-80">
+    <x-popover.content
+        id="foobar"
+        class="p-4 w-80"
+    >
         <div class="grid gap-4">
             <div class="space-y-2">
                 <h4 class="font-medium leading-none">Dimensions</h4>

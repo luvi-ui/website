@@ -6,14 +6,14 @@
 @php
     $alignment = $side . ['center' => '', 'end' => '-end', 'start' => '-start'][$align];
 @endphp
-<div
-    :id="$id('popover-trigger')"
+<dialog
+    popover
+    :id="$id('popover-content')"
     x-ref="popoverContent"
-    x-show="__open"
-    x-trap="__open"
+    x-effect="__open ? $el.showPopover() : $el.hidePopover()"
     x-anchor.{{ $alignment }}.offset.{{ $sideOffset }}="document.getElementById($id('popover-trigger'))"
-    x-on:click.outside="__close($refs.trigger)"
-    {{ $attributes->twMerge('z-50 p-4 overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md') }}
+    x-on:beforeToggle="__open = $event.newState === 'open'"
+    {{ $attributes->twMerge('m-0 overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md') }}
 >
     {{ $slot }}
-</div>
+</dialog>

@@ -1,3 +1,3 @@
-<div x-on:click="__close($refs.trigger)">
+<div x-on:click="__open = false">
     {{ $slot }}
 </div>
