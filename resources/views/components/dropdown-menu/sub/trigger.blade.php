@@ -1,23 +1,22 @@
 @props([
     'disabled' => false,
-    'inset' => false,
 ])
-<div
-    role="menuitem"
+<button
+    :id="$id('dropdown-menu-sub-trigger')"
+    :popovertarget="$id('dropdown-menu-sub-content')"
+    popovertargetaction="toggle"
     aria-haspopup="true"
     aria-disabled="{{ $disabled ? 'true' : 'false' }}"
-    x-dropdown-menu:subbutton
     tabindex="-1"
     {{ $attributes->except(['x-on:click', '@click', 'wire:click'])->twMerge([
             'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-            'relative flex w-full cursor-default select-none items-center',
+            'col-span-full grid grid-cols-subgrid cursor-default select-none items-center',
             'rounded-sm px-2 py-1.5 text-sm outline-none transition-colors',
             'opacity-50 cursor-not-allowed' => $disabled,
-            'pl-8' => $inset,
         ]) }}
 >
-    <span>
+    <div class="col-start-2 text-left">
         {{ $slot }}
-    </span>
+    </div>
     <x-lucide-chevron-right class="ml-auto size-4" />
-</div>
+</button>

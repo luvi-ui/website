@@ -1,7 +1,3 @@
-@props([
-    'inset' => false,
-])
-
-<li {{ $attributes->twMerge(['px-2 py-1.5 text-sm font-semibold', 'pl-8' => $inset]) }}>
+<li {{ $attributes->twMerge('col-start-2 col-span-2 py-1.5 row-start-1 text-sm font-semibold') }}>
     {{ $slot }}
 </li>

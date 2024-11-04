@@ -1,6 +1,5 @@
 @props([
     'disabled' => false,
-    'inset' => false,
 ])
 
 <li
@@ -12,11 +11,15 @@
             return $attributes->except(['x-on:click', '@click', 'wire:click']);
         })->twMerge([
             'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-            'relative flex w-full cursor-default select-none items-center',
+            'col-span-full grid grid-cols-subgrid items-center',
+            'cursor-default select-none',
             'rounded-sm px-2 py-1.5 text-sm outline-none transition-colors',
             'opacity-50 cursor-not-allowed' => $disabled,
-            'pl-8' => $inset,
         ]) }}
 >
-    {{ $slot }}
+    @if (str($slot)->contains('<'))
+        {{ $slot }}
+    @else
+        <x-dropdown-menu.item-label>{{ $slot }}</x-dropdown-menu.item-label>
+    @endif
 </li>
