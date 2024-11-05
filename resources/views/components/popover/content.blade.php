@@ -9,10 +9,9 @@
 <dialog
     popover
     :id="$id('popover-content')"
-    x-ref="popoverContent"
     x-effect="__open ? $el.showPopover() : $el.hidePopover()"
     x-anchor.{{ $alignment }}.offset.{{ $sideOffset }}="document.getElementById($id('popover-trigger'))"
-    x-on:beforeToggle="__open = $event.newState === 'open'"
+    x-on:toggle="__open = $event.newState === 'open'"
     {{ $attributes->twMerge('m-0 overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md') }}
 >
     {{ $slot }}

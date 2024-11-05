@@ -11,6 +11,8 @@ class Playground extends Component
 {
     public PlaygroundForm $form;
 
+    public $popoverOpen = true;
+
     public function save()
     {
         $this->validate();

@@ -1,10 +1,8 @@
 <x-button
     ::id="$id('popover-trigger')"
-    x-ref="popover-trigger"
-    ::popovertarget="$id('popover-content')"
-    popovertargetaction="toggle"
+    x-on:click="__open = ! __open"
     ::aria-expanded="__open"
-    ::aria-controls="$id('popover-trigger')"
+    ::aria-controls="$id('popover-content')"
     {{ $attributes->twMerge('') }}
 >
     {{ $slot }}
